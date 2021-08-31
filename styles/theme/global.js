@@ -7,4 +7,10 @@ export const GlobalStyle = createGlobalStyle`
 		box-sizing: border-box;
 		font-family: 'Roboto', sans-serif;
 	}
+	body {
+		height: 3000px;
+	}
+	@media (max-width: 1300px) {
+		
+	}
 `;
