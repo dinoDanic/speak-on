@@ -18,9 +18,9 @@ const Middle = styled.div`
   @media (max-width: 1400px) {
     width: 60%;
   }
-  @media (max-width: 600px) {
+  /*   @media (max-width: 600px) {
     width: 70%;
-  }
+  } */
 `;
 
 export default Container;

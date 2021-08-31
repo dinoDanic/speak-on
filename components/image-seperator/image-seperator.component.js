@@ -1,12 +1,24 @@
 import React from "react";
 import styled from "styled-components";
+import Image from "next/image";
 
-const ImageSeperator = () => {
+import BuildingImage from "../../img/home/buildings.jpg";
+import BlurImage from "../../img/home/blur.png";
+
+const ImageSeperator = ({ image, children }) => {
   return (
     <Container>
-      <Content>content</Content>
-      <Sep></Sep>
-      <Sep2></Sep2>
+      <Content>{children}</Content>
+      <Sep>
+        {image && (
+          <Image layout="responsive" src={BuildingImage} alt="building image" />
+        )}
+      </Sep>
+      <Sep2>
+        <Shadow>
+          <Image src={BlurImage} layout="fill" alt="shadow" />
+        </Shadow>
+      </Sep2>
     </Container>
   );
 };
@@ -21,31 +33,47 @@ const Container = styled.div`
   height: fit-content;
   min-height: 500px;
   overflow: hidden;
+  img {
+    /* margin-top: -130px !important; */
+  }
 `;
 
 const Content = styled.div`
-  margin-top: -200px;
+  margin-top: -160px;
+  z-index: 30;
 `;
 
 const Sep = styled.div`
+  overflow: hidden;
   width: 120%;
   position: absolute;
   top: 0;
   height: 100%;
-  background: linear-gradient(90deg, #65c1c2 -7.48%, #1e4e9d 173.45%);
-  border-top-left-radius: 100% 250px;
-  border-top-right-radius: 100% 250px;
-  z-index: -1;
+  background: ${(props) => props.theme.colors.ui.primaryGradient};
+  border-top-left-radius: 2000px 300px;
+  border-top-right-radius: 2000px 300px;
 `;
 const Sep2 = styled.div`
   width: 120%;
   position: absolute;
-  height: 150px;
+  display: flex;
+  justify-content: center;
+  height: 170px;
   bottom: 0px;
   background-color: #ffffff;
-  border-top-left-radius: 100% 250px;
-  border-top-right-radius: 100% 250px;
-  z-index: -1;
+  overflow: hidden;
+  /* border-top-left-radius: 100% 350px;
+  border-top-right-radius: 100% 250px; */
+  border-top-left-radius: 2000px 300px;
+  border-top-right-radius: 2000px 300px;
+`;
+
+const Shadow = styled.div`
+  position: absolute;
+  width: 60%;
+  margin-top: -100px;
+  height: 200px;
+  pointer-events: none;
 `;
 
 export default ImageSeperator;

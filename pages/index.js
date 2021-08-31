@@ -14,7 +14,9 @@ export default function Home() {
       <Hero />
       <Seperator />
       <Suport />
-      <ImageSeperator />
+      <ImageSeperator image>
+        <Title>How we can help</Title>
+      </ImageSeperator>
       <Cats />
       <ImageSeperator />
       <Contact />
@@ -22,3 +24,9 @@ export default function Home() {
     </>
   );
 }
+
+const Title = styled.div`
+  font-size: 46px;
+  color: white;
+  font-weight: 100;
+`;
