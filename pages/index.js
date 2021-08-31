@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
+import Cats from "../components/cats/cats.component";
+import Contact from "../components/contact/contact.component";
 import Hero from "../components/hero/hero.component";
+import ImageSeperator from "../components/image-seperator/image-seperator.component";
+import Map from "../components/map/map.component";
 import Seperator from "../components/seperator/seperator.component";
 import Suport from "../components/suport/suport.component";
 
@@ -10,6 +14,11 @@ export default function Home() {
       <Hero />
       <Seperator />
       <Suport />
+      <ImageSeperator />
+      <Cats />
+      <ImageSeperator />
+      <Contact />
+      <Map />
     </>
   );
 }
