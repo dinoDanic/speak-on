@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
 
-import LogoPng from "../../img/logo.png";
+import LogoPng from "../../img/logo.svg";
 
 import Menu from "./menu/menu.component";
 

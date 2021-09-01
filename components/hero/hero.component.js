@@ -3,7 +3,8 @@ import styled from "styled-components";
 import Image from "next/image";
 
 import BgImage from "../../img/home_bg.jpg";
-import LogoImage from "../../img/logo-icon.png";
+import LogoImage from "../../img/logo-icon.svg";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
@@ -15,7 +16,13 @@ const Hero = () => {
         objectPosition="center"
         alt="image"
       />
-      <ImageContainer>
+      <ImageContainer
+        initial={{ rotate: -30 }}
+        animate={{
+          rotate: 360,
+          transition: { duration: 180, ease: "linear", repeat: Infinity },
+        }}
+      >
         <Image src={LogoImage} alt="logo" />
       </ImageContainer>
       <Container></Container>
@@ -33,10 +40,10 @@ const Section = styled.section`
     height: 90vh;
   }
 `;
-const ImageContainer = styled.div`
+const ImageContainer = styled(motion.div)`
   position: absolute;
-  width: 1090px;
-  right: -700px;
+  width: 890px;
+  right: -530px;
   bottom: -520px;
   pointer-events: none;
 `;
