@@ -14,7 +14,12 @@ const ImageSeperator = ({ image, children }) => {
       </Container>
       <Sep>
         {image && (
-          <Image layout="responsive" src={BuildingImage} alt="building image" />
+          <Image
+            layout="responsive"
+            quality="100"
+            src={BuildingImage}
+            alt="building image"
+          />
         )}
       </Sep>
       <Sep2>

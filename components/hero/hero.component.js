@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-import BgImage from "../../img/home_bg.jpg";
+import BgImage from "../../img/main_bg.png";
 import LogoImage from "../../img/logo-icon.svg";
 import LogoPng from "../../img/logo.svg";
 
@@ -20,6 +20,7 @@ const Hero = () => {
         layout="fill"
         objectFit="cover"
         objectPosition="center"
+        quality="100"
         alt="image"
       />
       <ImageContainer
