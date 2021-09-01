@@ -2,11 +2,12 @@ export const logoAni = {
   initial: {
     opacity: 0,
     filter: "blur(15px)",
+    y: 300,
   },
   animate: {
     opacity: 1,
     filter: "blur(0px)",
-    y: [0, 0, 0, 0, -250],
+    y: [300, 300, 300, 0],
     transition: { duration: 2 },
   },
 };
@@ -35,11 +36,11 @@ export const icon3 = {
 export const buttonAni = {
   initial: {
     opacity: 0,
-    y: 180,
+    y: -20,
   },
   animate: {
     opacity: 1,
-    y: 220,
-    transition: { delay: 2.8, duration: 0.7 },
+    y: 0,
+    transition: { delay: 3, duration: 0.7 },
   },
 };

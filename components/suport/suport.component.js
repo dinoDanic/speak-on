@@ -38,13 +38,11 @@ const Suport = () => {
 const Content = styled.div`
   display: flex;
   flex-wrap: wrap;
+  gap: 30px;
 `;
 const Column = styled.div`
   min-width: 200px;
   flex: 1;
-  &:first-child {
-    margin-right: 85px;
-  }
 `;
 const Space = styled.div`
   margin-bottom: 19px;

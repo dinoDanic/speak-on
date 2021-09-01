@@ -32,40 +32,44 @@ const Hero = () => {
       >
         <Image src={LogoImage} alt="logo" />
       </ImageContainer>
-      <Container>
-        <IconsWrap>
-          <Logo variants={logoAni} animate="animate" initial="initial">
-            <Image src={LogoPng} alt="speak on logo image" />
-          </Logo>
-          <Icons />
-        </IconsWrap>
+
+      <Wrap>
+        <Logo variants={logoAni} animate="animate" initial="initial">
+          <Image src={LogoPng} alt="speak on logo image" />
+        </Logo>
+        <Icons />
         <ButtonHolder variants={buttonAni} animate="animate" initial="initial">
           <Button variant="borderBlue">MÁS SERVICIOS</Button>
         </ButtonHolder>
-      </Container>
+      </Wrap>
     </Section>
   );
 };
 const Section = styled.section`
-  background-color: blue;
+  width: 100%;
   height: 100vh;
   position: relative;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   img {
     pointer-events: none;
   }
 `;
-const Container = styled.div`
+const Wrap = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  height: 100%;
-  width: 100%;
+  justify-content: space-between;
+  height: 70%;
+  width: 80%;
+  z-index: 100;
+  @media (max-width: 700px) {
+    height: 90%;
+  }
 `;
-const Logo = styled(motion.div)`
-  position: absolute;
-`;
+const Logo = styled(motion.div)``;
 const ImageContainer = styled(motion.div)`
   position: absolute;
   width: 890px;
@@ -74,10 +78,6 @@ const ImageContainer = styled(motion.div)`
   pointer-events: none;
 `;
 
-const IconsWrap = styled.div`
-  display: flex;
-  justify-content: center;
-`;
 const ButtonHolder = styled(motion.div)``;
 
 export default Hero;

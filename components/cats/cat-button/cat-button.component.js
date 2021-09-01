@@ -58,7 +58,7 @@ const CatButton = ({ text, icon, setIsActive, isActive }) => {
     },
   };
   return (
-    <>
+    <Wrap>
       <Outer
         whileHover="hover"
         animate="rest"
@@ -71,10 +71,19 @@ const CatButton = ({ text, icon, setIsActive, isActive }) => {
         <Text variants={textMotion}>{text}</Text>
       </Outer>
       {isBig && <BigCat icon={icon} />}
-    </>
+    </Wrap>
   );
 };
 
+const Wrap = styled.div`
+  min-width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: ${(props) => props.theme.screen.mobile}) {
+    min-width: 130px;
+  }
+`;
 const Outer = styled(motion.div)`
   width: 176px;
   height: 176px;
@@ -90,6 +99,10 @@ const Outer = styled(motion.div)`
   align-items: center;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   cursor: pointer;
+  @media (max-width: ${(props) => props.theme.screen.mobile}) {
+    width: 130px;
+    height: 130px;
+  }
 `;
 
 const Text = styled(motion.div)`
@@ -100,7 +113,18 @@ const Text = styled(motion.div)`
   max-width: 120px;
   min-height: 40px;
   text-align: center;
+  @media (max-width: ${(props) => props.theme.screen.mobile}) {
+    font-size: ${(props) => props.theme.sizes.font.small2};
+    max-width: 100px;
+    margin-top: 0px;
+  }
 `;
-const Icon = styled(motion.div)``;
+const Icon = styled(motion.div)`
+  @media (max-width: ${(props) => props.theme.screen.mobile}) {
+    img {
+      width: 36px;
+    }
+  }
+`;
 
 export default CatButton;

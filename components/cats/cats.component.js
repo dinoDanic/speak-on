@@ -33,12 +33,14 @@ const Cats = () => {
 
 const Wrap = styled(motion.div)`
   width: 100%;
-  display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(170px, auto));
-  row-gap: 60px;
-  column-gap: 60px;
-  align-content: center;
+  display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  @media (max-width: ${(props) => props.theme.screen.mobile}) {
+    gap: 20px;
+  }
 `;
 const ButtonWrap = styled.div`
   display: flex;

@@ -42,6 +42,9 @@ const Bar = styled.div`
     border-top-right-radius: 2000px 300px;
     z-index: -1;
   }
+  @media (max-width: 700px) {
+    display: none;
+  }
 `;
 
 const Container = styled.div`

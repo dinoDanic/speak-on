@@ -20,9 +20,9 @@ const Middle = styled.div`
   @media (max-width: 1400px) {
     width: 60%;
   }
-  /*   @media (max-width: 600px) {
-    width: 70%;
-  } */
+  @media (max-width: ${(props) => props.theme.screen.mobile}) {
+    width: 90%;
+  }
 `;
 
 export default Container;

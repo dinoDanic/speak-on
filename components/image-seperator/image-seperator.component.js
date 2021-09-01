@@ -15,8 +15,9 @@ const ImageSeperator = ({ image, children }) => {
       <Sep>
         {image && (
           <Image
-            layout="responsive"
+            layout="fill"
             quality="100"
+            objectFit="cover"
             src={BuildingImage}
             alt="building image"
           />
@@ -41,9 +42,6 @@ const Wrap = styled.div`
   height: fit-content;
   min-height: 500px;
   overflow: hidden;
-  img {
-    /* margin-top: -130px !important; */
-  }
 `;
 
 const Content = styled.div`
@@ -74,8 +72,6 @@ const Sep2 = styled.div`
   bottom: 0px;
   background-color: #ffffff;
   overflow: hidden;
-  /* border-top-left-radius: 100% 350px;
-  border-top-right-radius: 100% 250px; */
   border-top-left-radius: 2000px 300px;
   border-top-right-radius: 2000px 300px;
 `;
@@ -86,6 +82,9 @@ const Shadow = styled.div`
   margin-top: -100px;
   height: 200px;
   pointer-events: none;
+  @media (max-width: ${(props) => props.theme.screen.mobile}) {
+    width: 100%;
+  }
 `;
 
 export default ImageSeperator;

@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled, { css, ThemeProvider } from "styled-components";
 import Image from "next/image";
 
 import FacebookSvg from "../../img/icons/fb.svg";
@@ -37,12 +37,25 @@ const Container = styled.div`
   right: 60px;
   top: 170px;
   z-index: 200;
+  @media (max-width: ${(props) => props.theme.screen.mobile}) {
+    position: relative;
+    right: auto;
+    top: auto;
+    width: 50%;
+  }
 `;
 const Wrap = styled.div`
   display: flex;
   flex-direction: column;
   align-content: center;
   justify-content: center;
+  @media (max-width: ${(props) => props.theme.screen.mobile}) {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    img {
+    }
+  }
 `;
 const Facebook = styled.div`
   ${items};

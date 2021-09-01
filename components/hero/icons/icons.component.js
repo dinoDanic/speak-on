@@ -45,9 +45,11 @@ const Icons = () => {
 
 const Container = styled.div`
   display: flex;
+  width: 100%;
   justify-content: center;
   position: relative;
-  background: green;
+  flex-wrap: wrap;
+  height: fit-content;
 `;
 const Icon = styled(motion.div)`
   position: absolute;
@@ -56,9 +58,19 @@ const Icon = styled(motion.div)`
   justify-content: center;
   cursor: pointer;
   flex-direction: column;
+  flex: 1;
   img {
     width: 74px !important;
     height: 60px !important;
+  }
+  @media (max-width: 700px) {
+    position: inherit;
+    transform: translate(0, 0) !important;
+    min-width: 100%;
+    margin-bottom: 30px;
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 `;
 const Text = styled.div`

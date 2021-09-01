@@ -24,6 +24,9 @@ const Container = styled.div`
   width: 100%;
   margin-top: -80px;
   overflow: hidden;
+  @media (max-width: 700px) {
+    margin-top: -20px;
+  }
 `;
 
 const Sep = styled.div`
@@ -43,6 +46,9 @@ const Shadow = styled.div`
   margin-top: -100px;
   height: 200px;
   pointer-events: none;
+  @media (max-width: ${(props) => props.theme.screen.mobile}) {
+    width: 100%;
+  }
 `;
 
 export default Seperator;

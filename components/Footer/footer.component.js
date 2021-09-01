@@ -43,17 +43,21 @@ const Logo = styled.div`
   max-width: 196px;
   height: 62px;
 `;
-const Top = styled.div``;
+const Top = styled.div`
+  z-index: 20;
+`;
 const Middle = styled.div`
   color: white;
   font-size: ${(props) => props.theme.sizes.font.small};
   font-weight: lighter;
+  z-index: 20;
 `;
 const Bottom = styled.div`
   color: white;
   font-size: ${(props) => props.theme.sizes.font.xSmall};
   text-align: center;
   font-weight: lighter;
+  z-index: 20;
 `;
 const BigLogo = styled.div`
   width: 774px;
@@ -61,6 +65,7 @@ const BigLogo = styled.div`
   position: absolute;
   right: -500px;
   top: 60px;
+  z-index: 10;
 `;
 
 export default Footer;
