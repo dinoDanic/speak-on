@@ -9,6 +9,7 @@ export const GlobalStyle = createGlobalStyle`
 	}
 	body {
 		height: 3000px;
+		letter-spacing: 0.12em;
 	}
 	@media (max-width: 1300px) {
 		

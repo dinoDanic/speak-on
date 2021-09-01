@@ -4,11 +4,14 @@ import Image from "next/image";
 
 import BuildingImage from "../../img/home/buildings.jpg";
 import BlurImage from "../../img/home/blur.png";
+import Container from "../ui/container/container.component";
 
 const ImageSeperator = ({ image, children }) => {
   return (
-    <Container>
-      <Content>{children}</Content>
+    <Wrap>
+      <Container>
+        <Content>{children}</Content>
+      </Container>
       <Sep>
         {image && (
           <Image layout="responsive" src={BuildingImage} alt="building image" />
@@ -19,11 +22,11 @@ const ImageSeperator = ({ image, children }) => {
           <Image src={BlurImage} layout="fill" alt="shadow" />
         </Shadow>
       </Sep2>
-    </Container>
+    </Wrap>
   );
 };
 
-const Container = styled.div`
+const Wrap = styled.div`
   margin-top: 50px;
   position: relative;
   display: flex;
@@ -39,8 +42,12 @@ const Container = styled.div`
 `;
 
 const Content = styled.div`
-  margin-top: -160px;
+  margin-top: -110px;
   z-index: 30;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Sep = styled.div`

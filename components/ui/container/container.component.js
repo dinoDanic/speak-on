@@ -12,9 +12,11 @@ const Container = ({ children, ...otherPorps }) => {
 const Wrap = styled.div`
   display: flex;
   justify-content: center;
+  width: 100%;
 `;
 const Middle = styled.div`
   width: 45%;
+  z-index: 30;
   @media (max-width: 1400px) {
     width: 60%;
   }

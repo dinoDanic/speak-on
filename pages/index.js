@@ -8,6 +8,8 @@ import Map from "../components/map/map.component";
 import Seperator from "../components/seperator/seperator.component";
 import Suport from "../components/suport/suport.component";
 
+import Slider from "../components/slider/slider.component";
+
 export default function Home() {
   return (
     <>
@@ -18,7 +20,9 @@ export default function Home() {
         <Title>How we can help</Title>
       </ImageSeperator>
       <Cats />
-      <ImageSeperator />
+      <ImageSeperator>
+        <Slider />
+      </ImageSeperator>
       <Contact />
       <Map />
     </>
