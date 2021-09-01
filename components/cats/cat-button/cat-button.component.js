@@ -76,13 +76,9 @@ const CatButton = ({ text, icon, setIsActive, isActive }) => {
 };
 
 const Wrap = styled.div`
-  min-width: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
-  @media (max-width: ${(props) => props.theme.screen.mobile}) {
-    min-width: 130px;
-  }
 `;
 const Outer = styled(motion.div)`
   width: 176px;
@@ -100,8 +96,8 @@ const Outer = styled(motion.div)`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   cursor: pointer;
   @media (max-width: ${(props) => props.theme.screen.mobile}) {
-    width: 130px;
-    height: 130px;
+    width: 150px;
+    height: 150px;
   }
 `;
 
@@ -120,6 +116,9 @@ const Text = styled(motion.div)`
   }
 `;
 const Icon = styled(motion.div)`
+  color: white !important;
+  svg {
+  }
   @media (max-width: ${(props) => props.theme.screen.mobile}) {
     img {
       width: 36px;

@@ -17,8 +17,8 @@ const Wrap = styled.div`
 const Middle = styled.div`
   width: 45%;
   z-index: 30;
-  @media (max-width: 1400px) {
-    width: 60%;
+  @media (max-width: 1500px) {
+    width: 70%;
   }
   @media (max-width: ${(props) => props.theme.screen.mobile}) {
     width: 90%;
