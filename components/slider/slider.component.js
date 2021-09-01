@@ -11,6 +11,7 @@ const Slider = () => {
         autoPlay={true}
         infiniteLoop={true}
         width="100%"
+        showThumbs={false}
       >
         <Slide key="slide1">
           <Sub>Opiniones de nuestros clientes</Sub>

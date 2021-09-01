@@ -77,7 +77,6 @@ const CatButton = ({ text, icon, setIsActive, isActive }) => {
 
 const Outer = styled(motion.div)`
   width: 176px;
-
   height: 176px;
   border: double 1px transparent;
   border-radius: 100%;
