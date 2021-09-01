@@ -11,9 +11,9 @@ const Button = ({ children, variant, ...otherProps }) => {
 };
 
 const defaultStyle = (theme) => `
-border-radius: 20px;
-border: none;
-text-transform: uppercase;
+  border-radius: 20px;
+  border: none;
+  text-transform: uppercase;
   font-size: ${theme.sizes.font.small};
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   cursor: pointer;
@@ -53,8 +53,25 @@ const border = (theme) => `
   cursor: pointer;
 `;
 
+const borderBlue = (theme) => `
+  border: 1px solid ${theme.colors.ui.secondary};
+  background: transparent;
+  color: white;
+  padding: 10px 30px;
+  &:hover {
+    transform: translate(0, -5px);
+    border:1px solid transparent;
+    background: linear-gradient(90deg, #65c1c2, #1e4e9d );
+  }
+  &:active {
+    transform: translate(0, -2px);
+  
+  }
+`;
+
 const variants = {
   border,
+  borderBlue,
   main,
 };
 

@@ -1,10 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 import BgImage from "../../img/home_bg.jpg";
 import LogoImage from "../../img/logo-icon.svg";
-import { motion } from "framer-motion";
+import LogoPng from "../../img/logo.svg";
+
+import Icons from "./icons/icons.component";
+import Button from "../../components/ui/button/button.component";
+
+import { logoAni, buttonAni } from "./animations";
 
 const Hero = () => {
   return (
@@ -25,20 +31,39 @@ const Hero = () => {
       >
         <Image src={LogoImage} alt="logo" />
       </ImageContainer>
-      <Container></Container>
+      <Container>
+        <IconsWrap>
+          <Logo variants={logoAni} animate="animate" initial="initial">
+            <Image src={LogoPng} alt="speak on logo image" />
+          </Logo>
+          <Icons />
+        </IconsWrap>
+        <ButtonHolder variants={buttonAni} animate="animate" initial="initial">
+          <Button variant="borderBlue">MÁS SERVICIOS</Button>
+        </ButtonHolder>
+      </Container>
     </Section>
   );
 };
-const Container = styled.div``;
 const Section = styled.section`
   background-color: blue;
   height: 100vh;
   position: relative;
   overflow: hidden;
-  pointer-events: none;
-  @media (min-width: 1300px) {
-    height: 90vh;
+  img {
+    pointer-events: none;
   }
+`;
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+`;
+const Logo = styled(motion.div)`
+  position: absolute;
 `;
 const ImageContainer = styled(motion.div)`
   position: absolute;
@@ -47,5 +72,11 @@ const ImageContainer = styled(motion.div)`
   bottom: -520px;
   pointer-events: none;
 `;
+
+const IconsWrap = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+const ButtonHolder = styled(motion.div)``;
 
 export default Hero;
