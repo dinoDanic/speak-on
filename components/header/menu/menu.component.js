@@ -6,7 +6,9 @@ const Menu = () => {
   return (
     <Container>
       <Items>
-        <Item>Inicio</Item>
+        <Link href="/">
+          <Item>Inicio</Item>
+        </Link>
         <Link href="/soluciones">
           <Item>Soluciones</Item>
         </Link>

@@ -39,6 +39,7 @@ const Content = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
+  margin-bottom: 50px;
 `;
 const Column = styled.div`
   min-width: 200px;
