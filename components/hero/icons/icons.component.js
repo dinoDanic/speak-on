@@ -50,7 +50,8 @@ const Container = styled.div`
   position: relative;
   flex-wrap: wrap;
   height: fit-content;
-  height: 100px;
+  @media (max-width: ${(props) => props.theme.screen.mobile}) {
+  }
 `;
 const Icon = styled(motion.div)`
   position: absolute;
@@ -65,7 +66,7 @@ const Icon = styled(motion.div)`
     color: red !important;
     height: 60px !important;
   }
-  @media (max-width: 700px) {
+  @media (max-width: ${(props) => props.theme.screen.mobile}) {
     position: inherit;
     transform: translate(0, 0) !important;
     min-width: 100%;

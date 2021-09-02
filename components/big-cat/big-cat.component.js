@@ -39,11 +39,13 @@ const BigCat = ({ data, setIsBig }) => {
 
 const Wrap = styled(motion.div)`
   position: absolute;
-  background: rgba(255, 255, 255, 1);
-  width: 100%;
+  background: #ffffff;
+  width: 110%;
+  left: -5%;
+  padding: 0 5%;
   height: 101%;
   top: 0;
-  left: 0;
+
   z-index: 200;
 `;
 const BackArrow = styled.div`

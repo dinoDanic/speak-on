@@ -67,6 +67,7 @@ const Fake = styled.div`
   position: absolute;
   width: 100%;
   height: 20px;
+  left: 0;
   top: 0;
 `;
 
