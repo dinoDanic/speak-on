@@ -27,7 +27,8 @@ const Bar = styled.div`
   position: fixed;
   overflow: hidden;
   color: white;
-  z-index: 999;
+  top: 0;
+  z-index: 900;
   &:after {
     content: "";
     box-sizing: border-box;

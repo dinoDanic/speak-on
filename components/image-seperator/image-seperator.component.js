@@ -6,13 +6,13 @@ import BuildingImage from "../../img/home/buildings.jpg";
 import BlurImage from "../../img/home/blur.png";
 import Container from "../ui/container/container.component";
 
-const ImageSeperator = ({ image, children }) => {
+const ImageSeperator = ({ image, children, top }) => {
   return (
     <Wrap>
       <Container>
         <Content>{children}</Content>
       </Container>
-      <Sep>
+      <Sep top={top}>
         {image && (
           <Image
             layout="fill"
@@ -33,7 +33,6 @@ const ImageSeperator = ({ image, children }) => {
 };
 
 const Wrap = styled.div`
-  margin-top: 50px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -60,8 +59,8 @@ const Sep = styled.div`
   top: 0;
   height: 100%;
   background: ${(props) => props.theme.colors.ui.primaryGradient};
-  border-top-left-radius: 2000px 300px;
-  border-top-right-radius: 2000px 300px;
+  border-top-left-radius: ${({ top }) => (top ? "2000px 300px" : "0")};
+  border-top-right-radius: ${({ top }) => (top ? "2000px 300px" : "0")};
 `;
 const Sep2 = styled.div`
   width: 120%;
@@ -87,4 +86,7 @@ const Shadow = styled.div`
   }
 `;
 
+ImageSeperator.defaultProps = {
+  top: true,
+};
 export default ImageSeperator;

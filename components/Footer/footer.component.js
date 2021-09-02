@@ -5,28 +5,40 @@ import Image from "next/image";
 import LogoPng from "../../img/logo.svg";
 import BigLogoSvg from "../../img/logo-icon.svg";
 
+import ImageSeperator from "../image-seperator/image-seperator.component";
+import Slider from "../slider/slider.component";
+import Contact from "../contact/contact.component";
+import Map from "../map/map.component";
+
 const Footer = () => {
   return (
-    <Container>
-      <Top>
-        <Logo>
-          <Image src={LogoPng} alt="speak on logo image" />
-        </Logo>
-      </Top>
-      <Middle>AVISO DE PRIVACIDAD</Middle>
-      <Bottom>
-        © Speak On. Reservados todos los derechos.
-        <br /> <br />
-        Sitio diseñado por Epic Brand 2021
-      </Bottom>
-      <BigLogo>
-        <Image src={BigLogoSvg} alt="speak on logo image" />
-      </BigLogo>
-    </Container>
+    <>
+      <ImageSeperator>
+        <Slider />
+      </ImageSeperator>
+      <Contact />
+      <Map />
+      <Credits>
+        <Top>
+          <Logo>
+            <Image src={LogoPng} alt="speak on logo image" />
+          </Logo>
+        </Top>
+        <Middle>AVISO DE PRIVACIDAD</Middle>
+        <Bottom>
+          © Speak On. Reservados todos los derechos.
+          <br /> <br />
+          Sitio diseñado por Epic Brand 2021
+        </Bottom>
+        <BigLogo>
+          <Image src={BigLogoSvg} alt="speak on logo image" />
+        </BigLogo>
+      </Credits>
+    </>
   );
 };
 
-const Container = styled.div`
+const Credits = styled.div`
   width: 100%;
   height: 300px;
   background-color: ${(props) => props.theme.colors.ui.primary};

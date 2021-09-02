@@ -20,11 +20,6 @@ export default function Home() {
         <Title>How we can help</Title>
       </ImageSeperator>
       <Cats />
-      <ImageSeperator>
-        <Slider />
-      </ImageSeperator>
-      <Contact />
-      <Map />
     </>
   );
 }

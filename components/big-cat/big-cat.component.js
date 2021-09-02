@@ -9,13 +9,14 @@ import Button from "../ui/button/button.component";
 
 import BackArrowSvg from "../../img/cat/backarrow.svg";
 
-const BigCat = ({ data, setIsBig }) => {
+const BigCat = ({ data, setIsBig, normal }) => {
   const { image, title, message, icon } = data;
   return (
     <Wrap
       exit={{ y: -20, opacity: 0 }}
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
+      normal={normal}
     >
       <Content>
         <Column>
@@ -27,9 +28,11 @@ const BigCat = ({ data, setIsBig }) => {
           <ButtonFix>contactanos</ButtonFix>
         </Column>
         <Column>
-          <BackArrow onClick={() => setIsBig(false)}>
-            <Image src={BackArrowSvg} alt="back image" />
-          </BackArrow>
+          {!normal && (
+            <BackArrow onClick={() => setIsBig(false)}>
+              <Image src={BackArrowSvg} alt="back image" />
+            </BackArrow>
+          )}
           <Image src={image} quality="100" alt="support image" />
         </Column>
       </Content>
@@ -38,12 +41,13 @@ const BigCat = ({ data, setIsBig }) => {
 };
 
 const Wrap = styled(motion.div)`
-  position: absolute;
+  position: ${({ normal }) => !normal && "absolute"};
   background: #ffffff;
   width: 110%;
   left: -5%;
   padding: 0 5%;
-  height: 101%;
+  height: ${({ normal }) => !normal && "101%"};
+  margin-bottom: ${({ normal }) => normal && "100px"};
   top: 0;
 
   z-index: 200;

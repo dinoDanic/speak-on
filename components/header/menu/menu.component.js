@@ -1,12 +1,15 @@
 import React from "react";
 import styled from "styled-components";
+import Link from "next/link";
 
 const Menu = () => {
   return (
     <Container>
       <Items>
         <Item>Inicio</Item>
-        <Item>Soluciones</Item>
+        <Link href="/soluciones">
+          <Item>Soluciones</Item>
+        </Link>
         <Item>Contacto</Item>
         <Item>Empty</Item>
       </Items>

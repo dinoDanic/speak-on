@@ -8,7 +8,6 @@ export const GlobalStyle = createGlobalStyle`
 		font-family: 'Roboto', sans-serif;
 	}
 	body {
-		height: 3000px;
 		letter-spacing: 0.12em;
 	}
 	@media (max-width: 1300px) {
