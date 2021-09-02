@@ -42,7 +42,6 @@ const BigCat = ({ data, setIsBig, normal }) => {
 
 const Wrap = styled(motion.div)`
   position: ${({ normal }) => !normal && "absolute"};
-  background: #ffffff;
   width: 110%;
   left: -5%;
   padding: 0 5%;

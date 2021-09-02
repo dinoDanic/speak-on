@@ -49,8 +49,9 @@ const Container = styled.div`
   justify-content: center;
   position: relative;
   flex-wrap: wrap;
-  height: fit-content;
+  height: 100px;
   @media (max-width: ${(props) => props.theme.screen.mobile}) {
+    height: fit-content;
   }
 `;
 const Icon = styled(motion.div)`

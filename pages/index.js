@@ -25,7 +25,7 @@ export default function Home() {
 }
 
 const Title = styled.div`
-  font-size: 46px;
+  font-size: ${(props) => props.theme.sizes.font.xLarge};
   color: white;
   font-weight: 100;
 `;

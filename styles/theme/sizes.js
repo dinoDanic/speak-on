@@ -7,6 +7,7 @@ export const sizes = {
     mid: "20px",
     mid2: "22px",
     large: "28px",
+    xLarge: "46px",
   },
   width: {},
 };
