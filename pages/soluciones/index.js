@@ -34,7 +34,7 @@ const Soluciones = () => {
       </BgHolder>
       <Container>
         {catsData?.map((data) => (
-          <BigCat normal data={data} key={data.text} />
+          <BigCat normal data={data} key={data.id} />
         ))}
       </Container>
     </SolucionesWrap>
