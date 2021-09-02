@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Image from "next/image";
 
 import { motion } from "framer-motion";
-import { solutionsAni, solutionsAniImage } from "../animations";
+import { solutionsAni, solutionsAniImage } from "../../styles/animations";
 
 import BuildingImage from "../../img/home/buildings.jpg";
 import BlurImage from "../../img/home/blur.png";

@@ -10,7 +10,7 @@ import LogoPng from "../../img/logo.svg";
 import Icons from "./icons/icons.component";
 import Button from "../../components/ui/button/button.component";
 
-import { logoAni, buttonAni } from "../../pages/animations";
+import { logoAni, buttonAni } from "../../styles/animations";
 
 const Hero = () => {
   return (

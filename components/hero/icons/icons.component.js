@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-import { icon1, icon2, icon3 } from "../../../pages/animations";
+import { icon1, icon2, icon3 } from "../../../styles/animations";
 
 import telemarketingSvg from "../../../img/icons/mic.svg";
 import ContactCenterSvg from "../../../img/icons/contactcenter.svg";
