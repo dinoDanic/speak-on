@@ -50,6 +50,7 @@ const Container = styled.div`
   position: relative;
   flex-wrap: wrap;
   height: fit-content;
+  height: 100px;
 `;
 const Icon = styled(motion.div)`
   position: absolute;
@@ -61,6 +62,7 @@ const Icon = styled(motion.div)`
   flex: 1;
   img {
     width: 74px !important;
+    color: red !important;
     height: 60px !important;
   }
   @media (max-width: 700px) {

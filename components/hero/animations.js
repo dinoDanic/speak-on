@@ -22,7 +22,7 @@ const iconAni = {
 
 export const icon1 = {
   initial: { ...iconInit },
-  animate: { ...iconAni, x: [0, 0, 0, 300] },
+  animate: { ...iconAni, x: 300 },
 };
 export const icon2 = {
   initial: { ...iconInit },
@@ -30,7 +30,7 @@ export const icon2 = {
 };
 export const icon3 = {
   initial: { ...iconInit },
-  animate: { ...iconAni, x: [0, 0, 0, -300] },
+  animate: { ...iconAni, x: -300 },
 };
 
 export const buttonAni = {
@@ -41,6 +41,6 @@ export const buttonAni = {
   animate: {
     opacity: 1,
     y: 0,
-    transition: { delay: 3, duration: 0.7 },
+    transition: { delay: 2, duration: 1 },
   },
 };

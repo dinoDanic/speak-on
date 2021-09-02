@@ -1,37 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Image from "next/image";
 import styled from "styled-components";
-import { motion } from "framer-motion";
-
-import telemarketing from "../../../img/icons/mic.svg";
-import ContactCenterSvg from "../../../img/icons/contactcenter.svg";
-import Attenction from "../../../img/icons/attencion.svg";
-import money from "../../../img/icons/money.svg";
-import base from "../../../img/icons/base.svg";
-import lock from "../../../img/icons/lock.svg";
-import ppl from "../../../img/icons/ppl.svg";
-import mon from "../../../img/icons/mon.svg";
-import info from "../../../img/icons/info.svg";
-import files from "../../../img/icons/files.svg";
-import reports from "../../../img/icons/reports.svg";
-import fin from "../../../img/icons/fin.svg";
+import { AnimatePresence, motion } from "framer-motion";
 
 import BigCat from "../../big-cat/big-cat.component";
-
-const icons = {
-  telemarketing,
-  ContactCenterSvg,
-  Attenction,
-  money,
-  lock,
-  base,
-  ppl,
-  mon,
-  info,
-  files,
-  reports,
-  fin,
-};
 
 const textMotion = {
   rest: { opacity: 1 },
@@ -47,8 +19,11 @@ const iconMotion = {
   },
 };
 
-const CatButton = ({ text, icon, setIsActive, isActive }) => {
+const CatButton = ({ data }) => {
+  const { title, icon } = data;
   const [isBig, setIsBig] = useState(false);
+  const fakeRef = useRef();
+
   const outerMotion = {
     rest: { y: 0 },
     hover: {
@@ -57,28 +32,49 @@ const CatButton = ({ text, icon, setIsActive, isActive }) => {
         "linear-gradient(#1e4e9d, #65c1c2), linear-gradient(90deg, #65c1c2 -7.48%, #1e4e9d 173.45%)",
     },
   };
+
+  const handleClick = () => {
+    setIsBig(true);
+    fakeRef.current.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+      inline: "nearest",
+    });
+  };
+
   return (
     <Wrap>
+      <Fake ref={fakeRef} />
       <Outer
         whileHover="hover"
         animate="rest"
         variants={outerMotion}
-        onClick={() => setIsBig(true)}
+        onClick={() => handleClick()}
       >
         <Icon variants={iconMotion}>
-          <Image src={icons[icon]} alt="telemarketing icon" />
+          <Image src={icon} alt="telemarketing icon" />
         </Icon>
-        <Text variants={textMotion}>{text}</Text>
+        <Text variants={textMotion}>{title}</Text>
       </Outer>
-      {isBig && <BigCat icon={icon} />}
+      <AnimatePresence>
+        {isBig && <BigCat data={data} setIsBig={setIsBig} />}
+      </AnimatePresence>
     </Wrap>
   );
 };
+
+const Fake = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  top: 0;
+`;
 
 const Wrap = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 `;
 const Outer = styled(motion.div)`
   width: 176px;
@@ -116,8 +112,8 @@ const Text = styled(motion.div)`
   }
 `;
 const Icon = styled(motion.div)`
-  color: white !important;
   svg {
+    color: white !important;
   }
   @media (max-width: ${(props) => props.theme.screen.mobile}) {
     img {
