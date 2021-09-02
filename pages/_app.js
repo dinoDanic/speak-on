@@ -12,25 +12,30 @@ import MenuMobile from "../components/header/menu-mobile/menu-mobile.component";
 import HideDesktop from "../components/ui/hide-desktop/hide-desktop.component";
 import Loading from "../components/loading/loading.component";
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps, router }) {
+  console.log(router);
   const [isLoading, setIsLoading] = useState(true);
+  const [isFirstMount, setIsFirstMount] = React.useState(true);
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
     }, 1000);
   }, []);
+
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <AnimatePresence>{isLoading && <Loading />}</AnimatePresence>
 
-      <Content animate={{ opacity: 1 }} initial={{ opacity: 0 }}>
+      <Content>
         <Header />
         <HideDesktop>
           <SocialMedia />
         </HideDesktop>
         <MenuMobile />
-        <Component {...pageProps} />
+        <AnimatePresence exitBeforeEnter>
+          <Component key={router.route} {...pageProps} />
+        </AnimatePresence>
         <Footer />
       </Content>
     </ThemeProvider>

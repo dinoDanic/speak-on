@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
 import IconLogoLine from "../../img/logo-icon-line.svg";
+import { motion } from "framer-motion";
 
 import BigCat from "../../components/big-cat/big-cat.component";
 import Container from "../../components/ui/container/container.component";
@@ -12,7 +13,12 @@ import { catsData } from "../../components/cats/cats.data";
 const Soluciones = () => {
   console.log(catsData);
   return (
-    <Wrap>
+    <SolucionesWrap
+      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      transition={{ duration: 0.8 }}
+      exit={{ opacity: 0 }}
+    >
       <Heading />
       <BgHolder>
         <LeftLogo>
@@ -31,7 +37,7 @@ const Soluciones = () => {
           <BigCat normal data={data} key={data.text} />
         ))}
       </Container>
-    </Wrap>
+    </SolucionesWrap>
   );
 };
 
@@ -40,7 +46,7 @@ const BgHolder = styled.div`
   position: absolute;
   width: 100%;
 `;
-const Wrap = styled.div`
+const SolucionesWrap = styled(motion.div)`
   height: 100%;
   position: relative;
   overflow: hidden;

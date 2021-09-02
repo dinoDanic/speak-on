@@ -46,3 +46,21 @@ export const buttonAni = {
     transition: { delay: loader + 2, duration: 1 },
   },
 };
+
+export const solutionsAni = {
+  initial: { y: 150, x: 150, opacity: 0 },
+  animate: {
+    x: 0,
+    y: 0,
+    opacity: 1,
+    transition: { delay: loader, duration: 1 },
+  },
+};
+
+export const solutionsAniImage = {
+  initial: { y: -100 },
+  animate: {
+    y: 0,
+    transition: { delay: loader + 1, duration: 1 },
+  },
+};

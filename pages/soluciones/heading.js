@@ -1,22 +1,36 @@
 import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
+
+import { motion } from "framer-motion";
+import { solutionsAni, solutionsAniImage } from "../animations";
+
 import BuildingImage from "../../img/home/buildings.jpg";
 import BlurImage from "../../img/home/blur.png";
+
 import Container from "../../components/ui/container/container.component";
+
 const Heading = () => {
   return (
     <Wrap>
       <Container>
-        <Text>How can we help</Text>
+        <Text variants={solutionsAni} animate="animate" initial="initial">
+          How can we help
+        </Text>
       </Container>
-      <Image
-        layout="fill"
-        quality="100"
-        objectFit="cover"
-        src={BuildingImage}
-        alt="building image"
-      />
+      <ImageHold
+        variants={solutionsAniImage}
+        animate="animate"
+        initial="initial"
+      >
+        <Image
+          layout="fill"
+          quality="100"
+          objectFit="cover"
+          src={BuildingImage}
+          alt="building image"
+        />
+      </ImageHold>
       <Sep>
         <Shadow>
           <Image src={BlurImage} layout="fill" alt="shadow" />
@@ -34,6 +48,12 @@ const Wrap = styled.div`
   height: fit-content;
   min-height: 700px;
   overflow: hidden;
+`;
+const ImageHold = styled(motion.div)`
+  margin-top: 0px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
 `;
 const Sep = styled.div`
   width: 120%;
@@ -58,7 +78,7 @@ const Shadow = styled.div`
   }
 `;
 
-const Text = styled.div`
+const Text = styled(motion.div)`
   margin-top: -110px;
   z-index: 30;
   width: 100%;

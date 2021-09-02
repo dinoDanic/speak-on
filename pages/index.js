@@ -1,18 +1,20 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 import Cats from "../components/cats/cats.component";
-import Contact from "../components/contact/contact.component";
 import Hero from "../components/hero/hero.component";
 import ImageSeperator from "../components/image-seperator/image-seperator.component";
-import Map from "../components/map/map.component";
 import Seperator from "../components/seperator/seperator.component";
 import Suport from "../components/suport/suport.component";
 
-import Slider from "../components/slider/slider.component";
-
 export default function Home() {
   return (
-    <>
+    <motion.div
+      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      transition={{ duration: 0.8 }}
+      exit={{ opacity: 0 }}
+    >
       <Hero />
       <Seperator />
       <Suport />
@@ -20,9 +22,11 @@ export default function Home() {
         <Title>How we can help</Title>
       </ImageSeperator>
       <Cats />
-    </>
+    </motion.div>
   );
 }
+
+const HomeWrap = styled(motion.div)``;
 
 const Title = styled.div`
   font-size: ${(props) => props.theme.sizes.font.xLarge};
