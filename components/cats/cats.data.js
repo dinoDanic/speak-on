@@ -31,6 +31,7 @@ export const catsData = [
     message:
       "Ofrecemos este servicio con personal altamente capacitado en ventas por teléfono, asegurando una gran captación de posibles clientes desde las primeras semanas de promoción del producto o servicio.",
     icon: telemarketingSvg,
+    id: 1,
   },
   {
     title: "Contact Center",
@@ -38,6 +39,7 @@ export const catsData = [
     message:
       "Brindamos a nuestros clientes el mejor servicio a través de nuestro talento humano altamente calificado y con tecnología de punta. Además su empresa puede contratar el servicio 01  800 para poder proporcionarle a sus clientes el número de soporte.",
     icon: ContactCenterSvg,
+    id: 2,
   },
   {
     title: "Atención a clientes",
@@ -45,6 +47,7 @@ export const catsData = [
     message:
       "Ofrecemos este servicio con alto volumen de llamadas, por ejemplo: Empresas de telecomunicación, Informática, Electrónica, entre muchas otras. Brindamos el servicio de asesoría técnica especializada vía telefónica y por internet.",
     icon: AttenctionSvg,
+    id: 3,
   },
   {
     title: "Cobranza",
@@ -52,6 +55,7 @@ export const catsData = [
     message:
       "Actualización de cobros. Recordatorio de pagos tardíos. Negociación de formas de pago para cartera vencida. Servicios de cobranza en las etapas administrativas.",
     icon: moneySvg,
+    id: 4,
   },
   {
     title: "Base de datos",
@@ -59,6 +63,7 @@ export const catsData = [
     message:
       "Brindamos soluciones para la constante actualización que sufren las bases de datos de nuestros clientes, agilizando la localización de sus usuarios y mantenimiento siempre con información relevante y actualizada. Realizamos la segmentación de mercados identificando las principales necesidades de nuestros clientes.",
     icon: baseSvg,
+    id: 5,
   },
   {
     title: "Seguridad lógica",
@@ -66,6 +71,7 @@ export const catsData = [
     message:
       "Todos los equipos tienen bloqueo al intentar colocar dispositivos externos a las computadoras (memorias, ipod, celulares, etc.) Restricción de páginas web, sociales y de ocio, sólo se deja el acceso a las herramientas integradas a la intranet de la empresa.",
     icon: lockSvg,
+    id: 6,
   },
   {
     title: "Retención de clientes",
@@ -73,6 +79,7 @@ export const catsData = [
     message:
       "Ofrecemos una amplia variedad de soluciones en comunicación que le ayudarán a retener a esos clientes que ya están con su empresa, ya que estos son los que presentan mayores índices de satisfacción y están propensos a adquirir nuevos productos y/o servicios.",
     icon: pplSvg,
+    id: 7,
   },
   {
     title: "Monitoreo de voz y datos",
@@ -80,6 +87,7 @@ export const catsData = [
     message:
       "Monitoreo de estaciones operativas por video, audio y equipo de cómputo, mediante un circuito de cámaras IP. Podemos adecuar el plan de monitoreo perfecto dependiendo de los requerimientos y necesidades del cliente y/o campaña, Se le puede otorgar la visualización de la operación en tiempo real.",
     icon: monSvg,
+    id: 8,
   },
   {
     title: "Información post - venta",
@@ -87,6 +95,7 @@ export const catsData = [
     message:
       "Ofrecemos servicio de atención a clientes, atención de garantías, información en general de algún producto o servicio, entre muchos otros; complementando así, la satisfacción de sus clientes.",
     icon: infoSvg,
+    id: 9,
   },
   {
     title: "Recopilación de base de datos",
@@ -94,6 +103,7 @@ export const catsData = [
     message:
       "Disponibilidad de datos con proveedores oficiales certificados, se obtiene la información de bases de datos internas o externas claramente evaluadas. Con un cruce de datos con la lista de REUS y RPC mensualmente para descartar los datos de clientes que afecten a la operación.",
     icon: filesSvg,
+    id: 10,
   },
   {
     title: "Reportes",
@@ -101,6 +111,7 @@ export const catsData = [
     message:
       "Para contar con un mayor control de la operación se generan reportes que faciliten la organización y planeación de la empresa, tanto en tiempo real como en histórico de tareas realizadas.",
     icon: reportsSvg,
+    id: 11,
   },
   {
     title: "Sector financiero",
@@ -108,5 +119,6 @@ export const catsData = [
     message:
       "Ofrecemos el servicio de transferencia de fondos y remesas, para que sus envíos de dinero lleguen siempre en tiempo y forma, con el respaldo de la calidad y prestigio de Main Call. Contamos con una serie de aplicaciones, funciones para planeación, control y organización de cualquier campaña.",
     icon: finSvg,
+    id: 12,
   },
 ];

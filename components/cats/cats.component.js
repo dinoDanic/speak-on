@@ -17,14 +17,16 @@ const Cats = () => {
   return (
     <Container>
       <Wrap onClick={() => setIsBig(!isBig)} ref={wrapRef}>
-        {catsData?.map((data) => (
-          <CatButton
-            setIsActive={setIsActive}
-            isActive={isActive}
-            key={data.title}
-            data={data}
-          />
-        ))}
+        {catsData?.map((data) => {
+          return (
+            <CatButton
+              setIsActive={setIsActive}
+              isActive={isActive}
+              key={data.id}
+              data={data}
+            />
+          );
+        })}
       </Wrap>
       <ButtonWrap>
         <Button>COTIZA AQUÍ</Button>
