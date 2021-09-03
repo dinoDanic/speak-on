@@ -1,20 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 import LogoPng from "../../../img/logo.svg";
 import Menu from "../menu/menu.component";
 import SocialMedia from "../../social-media/social-media.component";
 
 const MenuMobile = () => {
+  const router = useRouter();
   const [isOn, setIsOn] = useState(false);
+  const [currentRoute, setCurrentRoute] = useState(router.pathname);
+  const triggerRef = useRef();
+  useEffect(() => {
+    console.log(triggerRef.current.checked);
+    if (router !== currentRoute) {
+      setIsOn(false);
+      triggerRef.current.checked = false;
+    }
+  }, [router]);
   return (
     <Wrap>
       <Container>
         <Bar>
           <MenuToggle onClick={() => setIsOn(!isOn)}>
-            <Trigger type="checkbox" />
+            <Trigger type="checkbox" ref={triggerRef} />
             <Span></Span>
             <Span></Span>
             <Span></Span>
@@ -30,7 +41,7 @@ const MenuMobile = () => {
           <Logo>
             <Image src={LogoPng} width="228px" alt="speak on logo image" />
           </Logo>
-          <Menu />
+          <Menu setIsOn={setIsOn} triggerRef={triggerRef} />
           <SocialMedia />
         </MenuHolder>
       )}

@@ -1,28 +1,50 @@
 import React from "react";
+import { useRouter } from "next/router";
 import styled from "styled-components";
 import Link from "next/link";
 
-const Menu = () => {
+const Menu = ({ setIsOn, triggerRef }) => {
+  const router = useRouter();
+
   const handleScroll = () => {
+    setIsOn(false);
+    triggerRef.current.checked = false;
     window.scrollTo({
       top: document.documentElement.scrollHeight - 1500,
       behavior: "auto",
-      /* you can also use 'auto' behaviour 
-         in place of 'smooth' */
     });
   };
   return (
     <Container>
       <Items>
-        <Link href="/">
-          <Item>Inicio</Item>
+        <Link passHref={true} href="/">
+          <Item
+            value="/"
+            style={{
+              color: router.pathname === "/" && "#00C2FF",
+            }}
+          >
+            Inicio
+          </Item>
         </Link>
-        <Link href="/soluciones">
-          <Item>Soluciones</Item>
+        <Link passHref={true} href="/soluciones">
+          <Item
+            style={{
+              color: router.pathname === "/soluciones" && "#00C2FF",
+            }}
+          >
+            Soluciones
+          </Item>
         </Link>
         <Item onClick={() => handleScroll()}>Contacto</Item>
-        <Link href="/empty">
-          <Item>Empty</Item>
+        <Link passHref={true} href="/empty">
+          <Item
+            style={{
+              color: router.pathname === "/empty" && "#00C2FF",
+            }}
+          >
+            Empty
+          </Item>
         </Link>
       </Items>
     </Container>
