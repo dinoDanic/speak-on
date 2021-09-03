@@ -81,6 +81,7 @@ const Shadow = styled.div`
 const Text = styled(motion.div)`
   margin-top: -110px;
   z-index: 30;
+  text-align: center;
   width: 100%;
   display: flex;
   justify-content: center;
