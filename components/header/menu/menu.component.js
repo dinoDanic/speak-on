@@ -7,8 +7,10 @@ const Menu = ({ setIsOn, triggerRef }) => {
   const router = useRouter();
 
   const handleScroll = () => {
-    setIsOn(false);
-    triggerRef.current.checked = false;
+    if (setIsOn && triggerRef) {
+      setIsOn(false);
+      triggerRef.current.checked = false;
+    }
     window.scrollTo({
       top: document.documentElement.scrollHeight - 1500,
       behavior: "auto",

@@ -19,7 +19,7 @@ const MenuMobile = () => {
       setIsOn(false);
       triggerRef.current.checked = false;
     }
-  }, [router]);
+  }, [router, currentRoute]);
   return (
     <Wrap>
       <Container>
