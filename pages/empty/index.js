@@ -4,7 +4,6 @@ import Image from "next/image";
 import IconLogoLine from "../../img/logo-icon-line.svg";
 import { motion } from "framer-motion";
 
-import BigCat from "../../components/big-cat/big-cat.component";
 import Container from "../../components/ui/container/container.component";
 
 import { catsData } from "../../components/cats/cats.data";
@@ -18,7 +17,7 @@ const Soluciones = () => {
       transition={{ duration: 0.8 }}
       exit={{ opacity: 0 }}
     >
-      <HeroOtherPages>How can we help</HeroOtherPages>
+      <HeroOtherPages>Empty</HeroOtherPages>
       <BgHolder>
         <LeftLogo>
           <Image src={IconLogoLine} alt="logo" layout="fixed" />
@@ -31,11 +30,7 @@ const Soluciones = () => {
           <Image src={IconLogoLine} alt="logo" layout="fixed" />
         </RightLogo>
       </BgHolder>
-      <Container>
-        {catsData?.map((data) => (
-          <BigCat normal data={data} key={data.id} />
-        ))}
-      </Container>
+      <Container>Content goes here</Container>
     </SolucionesWrap>
   );
 };

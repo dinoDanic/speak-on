@@ -3,6 +3,14 @@ import styled from "styled-components";
 import Link from "next/link";
 
 const Menu = () => {
+  const handleScroll = () => {
+    window.scrollTo({
+      top: document.documentElement.scrollHeight - 1500,
+      behavior: "auto",
+      /* you can also use 'auto' behaviour 
+         in place of 'smooth' */
+    });
+  };
   return (
     <Container>
       <Items>
@@ -12,8 +20,10 @@ const Menu = () => {
         <Link href="/soluciones">
           <Item>Soluciones</Item>
         </Link>
-        <Item>Contacto</Item>
-        <Item>Empty</Item>
+        <Item onClick={() => handleScroll()}>Contacto</Item>
+        <Link href="/empty">
+          <Item>Empty</Item>
+        </Link>
       </Items>
     </Container>
   );

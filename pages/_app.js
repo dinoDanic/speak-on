@@ -13,9 +13,7 @@ import HideDesktop from "../components/ui/hide-desktop/hide-desktop.component";
 import Loading from "../components/loading/loading.component";
 
 function MyApp({ Component, pageProps, router }) {
-  console.log(router);
   const [isLoading, setIsLoading] = useState(true);
-  const [isFirstMount, setIsFirstMount] = React.useState(true);
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);

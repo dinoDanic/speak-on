@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 const Button = ({ children, variant, ...otherProps }) => {
-  console.log(variant);
   return (
     <ButtonUi variant={variant} {...otherProps}>
       {children}
