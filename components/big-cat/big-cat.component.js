@@ -48,6 +48,7 @@ const Wrap = styled(motion.div)`
   height: ${({ normal }) => !normal && "101%"};
   margin-bottom: ${({ normal }) => normal && "100px"};
   top: 0;
+  padding-top: ${({ normal }) => (normal ? "0" : "50px")};
   background: white;
   z-index: 200;
 `;

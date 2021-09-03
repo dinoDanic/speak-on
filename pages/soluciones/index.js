@@ -9,6 +9,7 @@ import Container from "../../components/ui/container/container.component";
 
 import { catsData } from "../../components/cats/cats.data";
 import HeroOtherPages from "../../components/hero/hero-other-pages.component";
+import BackgroundHolder from "../../components/background-holder/background-holder.component";
 
 const Soluciones = () => {
   return (
@@ -19,18 +20,7 @@ const Soluciones = () => {
       exit={{ opacity: 0 }}
     >
       <HeroOtherPages>How can we help</HeroOtherPages>
-      <BgHolder>
-        <LeftLogo>
-          <Image src={IconLogoLine} alt="logo" layout="fixed" />
-          <Image src={IconLogoLine} alt="logo" layout="fixed" />
-          <Image src={IconLogoLine} alt="logo" layout="fixed" />
-        </LeftLogo>
-        <RightLogo>
-          <Image src={IconLogoLine} alt="logo" layout="fixed" />
-          <Image src={IconLogoLine} alt="logo" layout="fixed" />
-          <Image src={IconLogoLine} alt="logo" layout="fixed" />
-        </RightLogo>
-      </BgHolder>
+      <BackgroundHolder />
       <Container>
         {catsData?.map((data) => (
           <BigCat normal data={data} key={data.id} />

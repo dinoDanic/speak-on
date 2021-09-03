@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
@@ -11,12 +11,15 @@ import { catsData } from "./cats.data";
 
 const Cats = () => {
   const [isActive, setIsActive] = useState(false);
-  const [isBig, setIsBig] = useState(false);
   const wrapRef = useRef();
+
+  useEffect(() => {
+    console.log(isActive);
+  }, [isActive, setIsActive]);
 
   return (
     <Container>
-      <Wrap onClick={() => setIsBig(!isBig)} ref={wrapRef}>
+      <Wrap ref={wrapRef} isActive={isActive}>
         {catsData?.map((data) => {
           return (
             <CatButton
@@ -37,11 +40,13 @@ const Cats = () => {
 
 const Wrap = styled(motion.div)`
   width: 100%;
-
+  height: ${({ isActive }) => (isActive ? "400px" : "fit-content")};
+  overflow: hidden;
   display: grid;
   grid-template-columns: repeat(3, auto);
   justify-content: center;
   align-items: center;
+  transition: 0.5s ease;
   gap: 40px;
   flex-wrap: wrap;
   position: relative;

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import styled from "styled-components";
 import { AnimatePresence, motion } from "framer-motion";
@@ -19,10 +19,16 @@ const iconMotion = {
   },
 };
 
-const CatButton = ({ data }) => {
+const CatButton = ({ data, setIsActive }) => {
   const { title, icon } = data;
   const [isBig, setIsBig] = useState(false);
   const fakeRef = useRef();
+
+  useEffect(() => {
+    if (!isBig) {
+      setIsActive(false);
+    }
+  }, [isBig]);
 
   const outerMotion = {
     rest: { y: 0 },
@@ -43,7 +49,7 @@ const CatButton = ({ data }) => {
   };
 
   return (
-    <Wrap>
+    <Wrap onClick={() => setIsActive(true)}>
       <Fake ref={fakeRef} />
       <Outer
         whileHover="hover"

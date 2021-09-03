@@ -1,6 +1,7 @@
 import React from "react";
-import styled, { css, ThemeProvider } from "styled-components";
+import styled, { css } from "styled-components";
 import Image from "next/image";
+import Link from "next/link";
 
 import FacebookSvg from "../../img/icons/fb.svg";
 import InstagramSvg from "../../img/icons/instagram.svg";
@@ -10,15 +11,21 @@ const SocialMedia = () => {
   return (
     <Container>
       <Wrap>
-        <Facebook>
-          <Image src={FacebookSvg} alt="facebook icon" />
-        </Facebook>
-        <Instagram>
-          <Image src={InstagramSvg} alt="instagram icon" />
-        </Instagram>
-        <WhatsUp>
-          <Image src={WhatsUpSvg} alt="whatsup icon" />
-        </WhatsUp>
+        <Link href="">
+          <Facebook>
+            <Image src={FacebookSvg} alt="facebook icon" />
+          </Facebook>
+        </Link>
+        <Link href="">
+          <Instagram>
+            <Image src={InstagramSvg} alt="instagram icon" />
+          </Instagram>
+        </Link>
+        <Link href="">
+          <WhatsUp>
+            <Image src={WhatsUpSvg} alt="whatsup icon" />
+          </WhatsUp>
+        </Link>
       </Wrap>
     </Container>
   );

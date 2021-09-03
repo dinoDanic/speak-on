@@ -9,7 +9,7 @@ import Suport from "../components/suport/suport.component";
 
 export default function Home() {
   return (
-    <motion.div
+    <HomeWrap
       animate={{ opacity: 1 }}
       initial={{ opacity: 0 }}
       transition={{ duration: 0.8 }}
@@ -22,7 +22,7 @@ export default function Home() {
         <Title>How we can help</Title>
       </ImageSeperator>
       <Cats />
-    </motion.div>
+    </HomeWrap>
   );
 }
 
