@@ -39,13 +39,13 @@ const Menu = ({ setIsOn, triggerRef }) => {
           </Item>
         </Link>
         <Item onClick={() => handleScroll()}>Contacto</Item>
-        <Link passHref={true} href="/empty">
+        <Link passHref={true} href="/lorem">
           <Item
             style={{
-              color: router.pathname === "/empty" && "#00C2FF",
+              color: router.pathname === "/lorem" && "#00C2FF",
             }}
           >
-            Empty
+            Lorem
           </Item>
         </Link>
       </Items>

@@ -8,8 +8,10 @@ import Container from "../../components/ui/container/container.component";
 import HeroOtherPages from "../../components/hero/hero-other-pages.component";
 import BackgroundHolder from "../../components/background-holder/background-holder.component";
 import Metatags from "../../components/Metatags";
+import Title from "../../components/ui/typo/title.typo";
+import Text from "../../components/ui/typo/text.type";
 
-const Soluciones = () => {
+const Lorem = () => {
   return (
     <>
       <Metatags title="" description="" />
@@ -20,8 +22,17 @@ const Soluciones = () => {
         exit={{ opacity: 0 }}
       >
         <BackgroundHolder />
-        <HeroOtherPages>Empty</HeroOtherPages>
-        <Container>Content goes here</Container>
+        <HeroOtherPages>Lorem Ipsum</HeroOtherPages>
+        <Container>
+          <Title>Lorem Ipsum</Title>
+          <br />
+          <Text>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
+            alias molestias possimus quidem, nam ullam rem exercitationem
+            obcaecati blanditiis quam, iste hic labore, praesentium eum earum
+            mollitia aperiam incidunt in.
+          </Text>
+        </Container>
       </SolucionesWrap>
     </>
   );
@@ -33,4 +44,4 @@ const SolucionesWrap = styled(motion.div)`
   overflow: hidden;
 `;
 
-export default Soluciones;
+export default Lorem;
