@@ -45,6 +45,8 @@ const Wrap = styled(motion.div)`
   height: ${({ isActive }) => (isActive ? "400px" : "fit-content")};
   overflow: hidden;
   display: grid;
+  padding: 50px 0;
+  margin: -50px 0;
   grid-template-columns: repeat(3, auto);
   justify-content: center;
   align-items: center;

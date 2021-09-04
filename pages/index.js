@@ -6,23 +6,30 @@ import Hero from "../components/hero/hero.component";
 import ImageSeperator from "../components/image-seperator/image-seperator.component";
 import Seperator from "../components/seperator/seperator.component";
 import Suport from "../components/suport/suport.component";
+import Metatags from "../components/Metatags";
 
 export default function Home() {
   return (
-    <HomeWrap
-      animate={{ opacity: 1 }}
-      initial={{ opacity: 0 }}
-      transition={{ duration: 0.8 }}
-      exit={{ opacity: 0 }}
-    >
-      <Hero />
-      <Seperator />
-      <Suport />
-      <ImageSeperator image>
-        <Title>How we can help</Title>
-      </ImageSeperator>
-      <Cats />
-    </HomeWrap>
+    <>
+      <Metatags
+        title="Home Page"
+        description="Especialistas en Outsourcing para toda empresa"
+      />
+      <HomeWrap
+        animate={{ opacity: 1 }}
+        initial={{ opacity: 0 }}
+        transition={{ duration: 0.8 }}
+        exit={{ opacity: 0 }}
+      >
+        <Hero />
+        <Seperator />
+        <Suport />
+        <ImageSeperator image>
+          <Title>How we can help</Title>
+        </ImageSeperator>
+        <Cats />
+      </HomeWrap>
+    </>
   );
 }
 
