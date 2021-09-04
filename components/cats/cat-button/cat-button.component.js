@@ -1,8 +1,6 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
-import { AnimatePresence, motion } from "framer-motion";
-
-import BigCat from "../../big-cat/big-cat.component";
+import { motion } from "framer-motion";
 
 const textMotion = {
   rest: { opacity: 1 },
@@ -18,16 +16,9 @@ const iconMotion = {
   },
 };
 
-const CatButton = ({ data, setIsActive }) => {
+const CatButton = ({ data, setCurrentCat }) => {
   const { title, icon } = data;
-  const [isBig, setIsBig] = useState(false);
   const fakeRef = useRef();
-
-  useEffect(() => {
-    if (!isBig) {
-      setIsActive(false);
-    }
-  }, [isBig, setIsActive]);
 
   const outerMotion = {
     rest: { y: 0 },
@@ -39,17 +30,19 @@ const CatButton = ({ data, setIsActive }) => {
   };
 
   const handleClick = () => {
-    setIsBig(true);
-    fakeRef.current.scrollIntoView({
-      behavior: "smooth",
-      block: "center",
-      inline: "nearest",
-    });
+    /* setTimeout(() => {
+      fakeRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+        inline: "nearest",
+      });
+    }, 200); */
+    setCurrentCat(title);
   };
 
   return (
-    <Wrap onClick={() => setIsActive(true)}>
-      <Fake ref={fakeRef} />
+    <Wrap>
+      {/* <Fake ref={fakeRef} /> */}
       <Outer
         whileHover="hover"
         animate="rest"
@@ -61,9 +54,9 @@ const CatButton = ({ data, setIsActive }) => {
         </Icon>
         <Text variants={textMotion}>{title}</Text>
       </Outer>
-      <AnimatePresence>
+      {/*       <AnimatePresence>
         {isBig && <BigCat data={data} setIsBig={setIsBig} />}
-      </AnimatePresence>
+      </AnimatePresence> */}
     </Wrap>
   );
 };

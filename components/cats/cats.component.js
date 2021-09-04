@@ -1,48 +1,84 @@
 import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 import Button from "../ui/button/button.component";
 import Container from "../ui/container/container.component";
 import CatButton from "./cat-button/cat-button.component";
-import BigCat from "../big-cat/big-cat.component";
+import OpenCategory from "./open-category/open-category.component";
 
 import { catsData } from "./cats.data";
 
 const Cats = () => {
-  const [isActive, setIsActive] = useState(false);
-  const wrapRef = useRef();
+  const [currentCat, setCurrentCat] = useState(null);
+  const fakeRef = useRef();
 
-  useEffect(() => {
-    console.log(isActive);
-  }, [isActive, setIsActive]);
+  const handleClick = () => {
+    setTimeout(() => {
+      fakeRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+        inline: "nearest",
+      });
+    }, 300);
+  };
 
   return (
     <Container>
-      <Wrap ref={wrapRef} isActive={isActive}>
-        {catsData?.map((data) => {
-          return (
-            <CatButton
-              setIsActive={setIsActive}
-              isActive={isActive}
-              key={data.id}
-              data={data}
+      <Relative>
+        <AnimatePresence exitBeforeEnter>
+          {!currentCat && (
+            <Wrap
+              exit={{ y: -40, opacity: 0, height: 0 }}
+              initial={{ y: -40, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              onClick={() => handleClick()}
+            >
+              {catsData?.map((data) => {
+                return (
+                  <CatButton
+                    setCurrentCat={setCurrentCat}
+                    key={data.id}
+                    data={data}
+                  />
+                );
+              })}
+            </Wrap>
+          )}
+        </AnimatePresence>
+        <AnimatePresence>
+          {currentCat && (
+            <OpenCategory
+              setCurrentCat={setCurrentCat}
+              currentCat={currentCat}
             />
-          );
-        })}
-      </Wrap>
-      <ButtonWrap>
-        <Button>COTIZA AQUÍ</Button>
-      </ButtonWrap>
+          )}
+        </AnimatePresence>
+        <Fake ref={fakeRef} />
+        <ButtonWrap>
+          <Button>COTIZA AQUÍ</Button>
+        </ButtonWrap>
+      </Relative>
     </Container>
   );
 };
-
+const Relative = styled.div`
+  position: relative;
+`;
+const Fake = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  margin-top: -100px;
+  left: 0;
+  @media (max-width: ${(props) => props.theme.screen.mobile}) {
+    top: 200px;
+  }
+`;
 const Wrap = styled(motion.div)`
   width: 100%;
   padding: 15px 0;
   margin-top: -50px;
-  height: ${({ isActive }) => (isActive ? "400px" : "fit-content")};
   overflow: hidden;
   display: grid;
   padding: 50px 0;
@@ -50,7 +86,6 @@ const Wrap = styled(motion.div)`
   grid-template-columns: repeat(3, auto);
   justify-content: center;
   align-items: center;
-  transition: 0.5s ease;
   gap: 40px;
   flex-wrap: wrap;
   position: relative;

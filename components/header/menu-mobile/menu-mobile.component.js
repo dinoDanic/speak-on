@@ -12,7 +12,6 @@ const MenuMobile = () => {
   const [currentRoute, setCurrentRoute] = useState(router.pathname);
   const triggerRef = useRef();
   useEffect(() => {
-    console.log(triggerRef.current.checked);
     if (router !== currentRoute) {
       setIsOn(false);
       triggerRef.current.checked = false;
