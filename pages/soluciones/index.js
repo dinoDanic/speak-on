@@ -1,7 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Image from "next/image";
-import IconLogoLine from "../../img/logo-icon-line.svg";
 import { motion } from "framer-motion";
 
 import BigCat from "../../components/big-cat/big-cat.component";

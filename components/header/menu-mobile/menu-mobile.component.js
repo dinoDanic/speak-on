@@ -1,10 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import Image from "next/image";
 import { useRouter } from "next/router";
 
-import LogoPng from "../../../img/logo.svg";
 import Menu from "../menu/menu.component";
 import SocialMedia from "../../social-media/social-media.component";
 
@@ -39,7 +37,7 @@ const MenuMobile = () => {
           transition={{ type: "tween" }}
         >
           <Logo>
-            <Image src={LogoPng} width="228px" alt="speak on logo image" />
+            <img src="/img/logo.svg" width="228px" alt="speak on logo image" />
           </Logo>
           <Menu setIsOn={setIsOn} triggerRef={triggerRef} />
           <SocialMedia />

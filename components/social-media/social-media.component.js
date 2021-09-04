@@ -1,29 +1,24 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import Image from "next/image";
 import Link from "next/link";
-
-import FacebookSvg from "../../img/icons/fb.svg";
-import InstagramSvg from "../../img/icons/instagram.svg";
-import WhatsUpSvg from "../../img/icons/whatsup.svg";
 
 const SocialMedia = () => {
   return (
     <Container>
       <Wrap>
-        <Link href="">
+        <Link passHref href="">
           <Facebook>
-            <Image src={FacebookSvg} alt="facebook icon" />
+            <img src="/img/icons/fb.svg" alt="facebook icon" />
           </Facebook>
         </Link>
-        <Link href="">
+        <Link passHref href="">
           <Instagram>
-            <Image src={InstagramSvg} alt="instagram icon" />
+            <img src="/img/icons/instagram.svg" alt="instagram icon" />
           </Instagram>
         </Link>
-        <Link href="">
+        <Link passHref href="">
           <WhatsUp>
-            <Image src={WhatsUpSvg} alt="whatsup icon" />
+            <img src="/img/icons/whatsup.svg" alt="whatsup icon" />
           </WhatsUp>
         </Link>
       </Wrap>

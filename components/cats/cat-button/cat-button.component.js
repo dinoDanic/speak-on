@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from "react";
-import Image from "next/image";
 import styled from "styled-components";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -28,7 +27,7 @@ const CatButton = ({ data, setIsActive }) => {
     if (!isBig) {
       setIsActive(false);
     }
-  }, [isBig]);
+  }, [isBig, setIsActive]);
 
   const outerMotion = {
     rest: { y: 0 },
@@ -58,7 +57,7 @@ const CatButton = ({ data, setIsActive }) => {
         onClick={() => handleClick()}
       >
         <Icon variants={iconMotion}>
-          <Image src={icon} alt="telemarketing icon" />
+          <img src={icon} alt="telemarketing icon" />
         </Icon>
         <Text variants={textMotion}>{title}</Text>
       </Outer>

@@ -40,6 +40,8 @@ const Cats = () => {
 
 const Wrap = styled(motion.div)`
   width: 100%;
+  padding: 15px 0;
+  margin-top: -50px;
   height: ${({ isActive }) => (isActive ? "400px" : "fit-content")};
   overflow: hidden;
   display: grid;

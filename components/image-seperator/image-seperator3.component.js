@@ -1,9 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Image from "next/image";
-
-import BuildingImage from "../../img/home/buildings.jpg";
-import BlurImage from "../../img/home/blur.png";
 
 const ImageSeperator = ({ image, children }) => {
   return (
@@ -35,17 +31,7 @@ const ImageSeperator = ({ image, children }) => {
             fill="white"
           />
         </svg>
-        {/* <Shadow>
-          <Image src={BlurImage} />
-        </Shadow> */}
       </SvgBottom>
-
-      {/* <Content>{children}</Content>
-      <Img>
-        {image && (
-          <Image layout="responsive" src={BuildingImage} alt="building image" />
-        )}
-      </Img> */}
     </Container>
   );
 };

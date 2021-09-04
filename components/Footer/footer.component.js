@@ -1,9 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Image from "next/image";
-
-import LogoPng from "../../img/logo.svg";
-import BigLogoSvg from "../../img/logo-icon.svg";
 
 import ImageSeperator from "../image-seperator/image-seperator.component";
 import Slider from "../slider/slider.component";
@@ -21,7 +17,7 @@ const Footer = () => {
       <Credits>
         <Top>
           <Logo>
-            <Image src={LogoPng} alt="speak on logo image" />
+            <img src="/img/logo.svg" alt="speak on logo image" />
           </Logo>
         </Top>
         <Middle>AVISO DE PRIVACIDAD</Middle>
@@ -31,7 +27,7 @@ const Footer = () => {
           Sitio diseñado por Epic Brand 2021
         </Bottom>
         <BigLogo>
-          <Image src={BigLogoSvg} alt="speak on logo image" />
+          <img src="/img/logo-icon.svg" alt="speak on logo image" />
         </BigLogo>
       </Credits>
     </>
