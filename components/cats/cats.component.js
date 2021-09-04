@@ -14,13 +14,13 @@ const Cats = () => {
   const fakeRef = useRef();
 
   const handleClick = () => {
-    setTimeout(() => {
+    /* setTimeout(() => {
       fakeRef.current.scrollIntoView({
         behavior: "smooth",
         block: "center",
         inline: "nearest",
       });
-    }, 300);
+    }, 300); */
   };
 
   return (
@@ -32,7 +32,6 @@ const Cats = () => {
               exit={{ y: -40, opacity: 0, height: 0 }}
               initial={{ y: -40, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              onClick={() => handleClick()}
             >
               {catsData?.map((data) => {
                 return (
@@ -40,6 +39,7 @@ const Cats = () => {
                     setCurrentCat={setCurrentCat}
                     key={data.id}
                     data={data}
+                    onClick={() => handleClick()}
                   />
                 );
               })}
@@ -54,7 +54,7 @@ const Cats = () => {
             />
           )}
         </AnimatePresence>
-        <Fake ref={fakeRef} />
+        {/*         <Fake ref={fakeRef} /> */}
         <ButtonWrap>
           <Button>COTIZA AQUÍ</Button>
         </ButtonWrap>

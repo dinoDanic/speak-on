@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import styled from "styled-components";
 import { catsData } from "../cats.data";
 import { motion } from "framer-motion";
@@ -9,11 +9,21 @@ import Button from "../../ui/button/button.component";
 
 const OpenCategory = ({ setCurrentCat, currentCat }) => {
   const [state, setState] = useState({});
+  const fakeRef = useRef();
 
   useEffect(() => {
     if (!catsData) return;
     const find = catsData.filter((cat) => cat.title === currentCat);
     setState(find[0]);
+    if (catsData !== null) {
+      setTimeout(() => {
+        fakeRef.current.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+          inline: "nearest",
+        });
+      }, 300);
+    }
   }, [currentCat]);
 
   return (
@@ -22,6 +32,7 @@ const OpenCategory = ({ setCurrentCat, currentCat }) => {
       initial={{ y: -40, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
     >
+      <Fake ref={fakeRef} />
       <Content>
         {state && (
           <>
@@ -48,6 +59,16 @@ const OpenCategory = ({ setCurrentCat, currentCat }) => {
 
 const Wrap = styled(motion.div)`
   background: white;
+`;
+const Fake = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  margin-top: -300px;
+  left: 0;
+  @media (max-width: ${(props) => props.theme.screen.mobile}) {
+    top: 200px;
+  }
 `;
 const BackArrow = styled.div`
   transition: 0.2s ease;
