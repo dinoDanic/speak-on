@@ -22,7 +22,9 @@ const Suport = () => {
             dispuesto a brindar la mejor atención y compromiso con nuestros
             colaboradores.
           </Text>
-          <Button>contactanos</Button>
+          <ButtonHolder>
+            <Button>contactanos</Button>
+          </ButtonHolder>
         </Column>
         <Column>
           <img
@@ -41,6 +43,9 @@ const Content = styled.div`
   flex-wrap: wrap;
   gap: 30px;
   margin-bottom: 50px;
+  @media (max-width: ${(props) => props.theme.screen.mobile}) {
+    margin-top: -50px;
+  }
 `;
 const Column = styled.div`
   min-width: 300px;
@@ -48,6 +53,13 @@ const Column = styled.div`
 `;
 const Space = styled.div`
   margin-bottom: 19px;
+`;
+
+const ButtonHolder = styled.div`
+  @media (max-width: ${(props) => props.theme.screen.mobile}) {
+    display: flex;
+    justify-content: center;
+  }
 `;
 
 export default Suport;

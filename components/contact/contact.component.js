@@ -76,6 +76,9 @@ const Wrap = styled.div`
   flex-wrap: wrap;
   margin-top: -20px;
   margin-bottom: 50px;
+  @media (max-width: ${(props) => props.theme.screen.mobile}) {
+    margin-top: -70px;
+  }
 `;
 
 const Form = styled.form``;

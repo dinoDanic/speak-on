@@ -47,6 +47,7 @@ const ImageHold = styled(motion.div)`
   img {
     object-fit: cover;
     width: 100%;
+    height: 100%;
   }
 `;
 const Sep = styled.div`

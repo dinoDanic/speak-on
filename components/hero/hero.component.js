@@ -23,7 +23,7 @@ const Hero = () => {
 
       <Wrap>
         <Logo variants={logoAni} animate="animate" initial="initial">
-          <img src="/img/logo.svg" width="100%" alt="speak on logo image" />
+          <img src="/img/logo.svg" alt="speak on logo image" />
         </Logo>
         <Icons />
         <ButtonHolder variants={buttonAni} animate="animate" initial="initial">

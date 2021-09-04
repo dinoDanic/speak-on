@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import styled from "styled-components";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -91,6 +91,8 @@ const Wrap = styled(motion.div)`
   position: relative;
   @media (max-width: ${(props) => props.theme.screen.mobile}) {
     grid-template-columns: repeat(2, auto);
+    margin-top: -130px;
+    gap: 20px;
   }
 `;
 const ButtonWrap = styled.div`

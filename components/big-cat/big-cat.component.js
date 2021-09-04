@@ -22,7 +22,9 @@ const BigCat = ({ data, setIsBig, normal }) => {
             <img src={icon} alt="icon image" width="40px" />
           </Header>
           <Text>{message}</Text>
-          <ButtonFix>contactanos</ButtonFix>
+          <ButtonHold>
+            <Button>contactanos</Button>
+          </ButtonHold>
         </Column>
         <Column>
           {!normal && (
@@ -48,6 +50,9 @@ const Wrap = styled(motion.div)`
   padding-top: ${({ normal }) => (normal ? "0" : "50px")};
   background: white;
   z-index: 200;
+  @media (max-width: ${(props) => props.theme.screen.mobile}) {
+    margin-top: -100px;
+  }
 `;
 const BackArrow = styled.div`
   position: absolute;
@@ -59,8 +64,15 @@ const BackArrow = styled.div`
     transform: scale(1.1);
   }
 `;
-const ButtonFix = styled(Button)`
-  width: fit-content;
+
+const ButtonHold = styled.div`
+  @media (max-width: ${(props) => props.theme.screen.mobile}) {
+    display: flex;
+    justify-content: center;
+  }
+  button {
+    width: fit-content;
+  }
 `;
 const Header = styled.div`
   display: flex;

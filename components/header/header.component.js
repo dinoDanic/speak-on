@@ -9,7 +9,7 @@ const Header = () => {
       <Container>
         <Content>
           <Logo>
-            <img src="/img/logo.svg" alt="speak on logo image" width="100%" />
+            <img src="/img/logo.svg" alt="speak on logo image" />
           </Logo>
           <Menu />
         </Content>

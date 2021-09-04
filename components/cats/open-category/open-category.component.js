@@ -23,20 +23,24 @@ const OpenCategory = ({ setCurrentCat, currentCat }) => {
       animate={{ y: 0, opacity: 1 }}
     >
       <Content>
-        <Column>
-          <Header>
-            <Title>{state.title}</Title>
-            <img src={state.icon} alt="icon image" width="40px" />
-          </Header>
-          <Text>{state.message}</Text>
-          <ButtonFix>contactanos</ButtonFix>
-        </Column>
-        <Column>
-          <BackArrow onClick={() => setCurrentCat(null)}>
-            <img src="/img/cat/backarrow.svg" alt="back image" />
-          </BackArrow>
-          <img src={state.image} quality="100" alt="support image" />
-        </Column>
+        {state && (
+          <>
+            <Column>
+              <Header>
+                <Title>{state.title}</Title>
+                <img src={state.icon} alt="icon image" width="40px" />
+              </Header>
+              <Text>{state.message}</Text>
+              <ButtonFix>contactanos</ButtonFix>
+            </Column>
+            <Column>
+              <BackArrow onClick={() => setCurrentCat(null)}>
+                <img src="/img/cat/backarrow.svg" alt="back image" />
+              </BackArrow>
+              <img src={state.image} quality="100" alt="support image" />
+            </Column>
+          </>
+        )}
       </Content>
     </Wrap>
   );
