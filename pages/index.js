@@ -1,5 +1,7 @@
+import { useContext, useEffect, useRef } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { ScrollContext } from "../context/scroll.context";
 
 import Cats from "../components/cats/cats.component";
 import Hero from "../components/hero/hero.component";
@@ -9,6 +11,19 @@ import Suport from "../components/suport/suport.component";
 import Metatags from "../components/Metatags";
 
 export default function Home() {
+  const scroll = useContext(ScrollContext);
+  const scrollRef = useRef();
+
+  useEffect(() => {
+    if (scroll.scrollDown === true) {
+      scrollRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+        inline: "nearest",
+      });
+    }
+  }, [scroll]);
+
   return (
     <>
       <Metatags
@@ -27,6 +42,7 @@ export default function Home() {
         <ImageSeperator image>
           <Title>How we can help</Title>
         </ImageSeperator>
+        <ScrollRef ref={scrollRef} />
         <Cats />
       </HomeWrap>
     </>
@@ -40,3 +56,5 @@ const Title = styled.div`
   color: white;
   font-weight: 100;
 `;
+
+const ScrollRef = styled.div``;

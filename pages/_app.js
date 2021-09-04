@@ -3,6 +3,7 @@ import { ThemeProvider } from "styled-components";
 import { theme } from "../styles/theme";
 import { GlobalStyle } from "../styles/theme/global";
 import { AnimatePresence, motion } from "framer-motion";
+import { ScrollContext } from "../context/scroll.context";
 import styled from "styled-components";
 
 import Header from "../components/header/header.component";
@@ -14,6 +15,7 @@ import Loading from "../components/loading/loading.component";
 
 function MyApp({ Component, pageProps, router }) {
   const [isLoading, setIsLoading] = useState(true);
+  const [scrollDown, setScrollDown] = useState(false);
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
@@ -21,22 +23,23 @@ function MyApp({ Component, pageProps, router }) {
   }, []);
 
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <AnimatePresence>{isLoading && <Loading />}</AnimatePresence>
-
-      <Content>
-        <Header />
-        <HideDesktop>
-          <SocialMedia />
-        </HideDesktop>
-        <MenuMobile />
-        <AnimatePresence exitBeforeEnter>
-          <Component key={router.route} {...pageProps} />
-        </AnimatePresence>
-        <Footer />
-      </Content>
-    </ThemeProvider>
+    <ScrollContext.Provider value={{ scrollDown, setScrollDown }}>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <AnimatePresence>{isLoading && <Loading />}</AnimatePresence>
+        <Content>
+          <Header />
+          <HideDesktop>
+            <SocialMedia />
+          </HideDesktop>
+          <MenuMobile />
+          <AnimatePresence exitBeforeEnter>
+            <Component key={router.route} {...pageProps} />
+          </AnimatePresence>
+          <Footer />
+        </Content>
+      </ThemeProvider>
+    </ScrollContext.Provider>
   );
 }
 

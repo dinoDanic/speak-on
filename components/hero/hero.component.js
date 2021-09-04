@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { ScrollContext } from "../../context/scroll.context";
 
 import Icons from "./icons/icons.component";
 import Button from "../../components/ui/button/button.component";
@@ -8,6 +9,14 @@ import Button from "../../components/ui/button/button.component";
 import { logoAni, buttonAni } from "../../styles/animations";
 
 const Hero = () => {
+  const Scroll = useContext(ScrollContext);
+
+  const handleScrollClick = () => {
+    Scroll.setScrollDown(true);
+    setTimeout(() => {
+      Scroll.setScrollDown(false);
+    }, 1000);
+  };
   return (
     <Section>
       <Img src="/img/main_bg.png" alt="image" />
@@ -27,7 +36,9 @@ const Hero = () => {
         </Logo>
         <Icons />
         <ButtonHolder variants={buttonAni} animate="animate" initial="initial">
-          <Button variant="borderBlue">MÁS SERVICIOS</Button>
+          <Button variant="borderBlue" onClick={() => handleScrollClick()}>
+            MÁS SERVICIOS
+          </Button>
         </ButtonHolder>
       </Wrap>
     </Section>
