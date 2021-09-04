@@ -1,7 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Image from "next/image";
-import IconLogoLine from "../../img/logo-icon-line.svg";
 import { motion } from "framer-motion";
 
 import BigCat from "../../components/big-cat/big-cat.component";
@@ -10,23 +8,27 @@ import Container from "../../components/ui/container/container.component";
 import { catsData } from "../../components/cats/cats.data";
 import HeroOtherPages from "../../components/hero/hero-other-pages.component";
 import BackgroundHolder from "../../components/background-holder/background-holder.component";
+import Metatags from "../../components/Metatags";
 
 const Soluciones = () => {
   return (
-    <SolucionesWrap
-      animate={{ opacity: 1 }}
-      initial={{ opacity: 0 }}
-      transition={{ duration: 0.8 }}
-      exit={{ opacity: 0 }}
-    >
-      <HeroOtherPages>How can we help</HeroOtherPages>
-      <BackgroundHolder />
-      <Container>
-        {catsData?.map((data) => (
-          <BigCat normal data={data} key={data.id} />
-        ))}
-      </Container>
-    </SolucionesWrap>
+    <>
+      <Metatags title="Soluciones" description="How we can help" />
+      <SolucionesWrap
+        animate={{ opacity: 1 }}
+        initial={{ opacity: 0 }}
+        transition={{ duration: 0.8 }}
+        exit={{ opacity: 0 }}
+      >
+        <HeroOtherPages>How we can help</HeroOtherPages>
+        <BackgroundHolder />
+        <Container>
+          {catsData?.map((data) => (
+            <BigCat normal data={data} key={data.id} />
+          ))}
+        </Container>
+      </SolucionesWrap>
+    </>
   );
 };
 
