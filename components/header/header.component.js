@@ -1,8 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Image from "next/image";
-
-import LogoPng from "../../img/logo.svg";
 
 import Menu from "./menu/menu.component";
 
@@ -12,7 +9,7 @@ const Header = () => {
       <Container>
         <Content>
           <Logo>
-            <Image src={LogoPng} alt="speak on logo image" />
+            <img src="/img/logo.svg" alt="speak on logo image" width="100%" />
           </Logo>
           <Menu />
         </Content>
@@ -22,7 +19,6 @@ const Header = () => {
 };
 
 const Bar = styled.div`
-  /*   background: red; */
   width: 100%;
   height: 140px;
   position: fixed;

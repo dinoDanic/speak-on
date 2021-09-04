@@ -1,9 +1,6 @@
 import React from "react";
-import Image from "next/image";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-
-import LogoSvg from "../../img/logo-icon.svg";
 
 const Loading = () => {
   return (
@@ -13,7 +10,7 @@ const Loading = () => {
         animate={{ rotate: -153 }}
         transition={{ duration: 0.5, repeat: Infinity, repeatType: "mirror" }}
       >
-        <Image src={LogoSvg} width="60" alt="logo image" />
+        <img src="/img/logo-icon.svg" width="60" alt="logo image" />
       </Content>
     </Wraper>
   );

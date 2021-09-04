@@ -10,6 +10,11 @@ export const GlobalStyle = createGlobalStyle`
 	body {
 		letter-spacing: 0.12em;
 	}
+	img {
+		max-width: 100%;
+		
+	}
+
 	@media (max-width: 1300px) {
 		
 	}

@@ -1,11 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Image from "next/image";
 import { motion } from "framer-motion";
-
-import BgImage from "../../img/main_bg.png";
-import LogoImage from "../../img/logo-icon.svg";
-import LogoPng from "../../img/logo.svg";
 
 import Icons from "./icons/icons.component";
 import Button from "../../components/ui/button/button.component";
@@ -15,14 +10,7 @@ import { logoAni, buttonAni } from "../../styles/animations";
 const Hero = () => {
   return (
     <Section>
-      <Image
-        src={BgImage}
-        layout="fill"
-        objectFit="cover"
-        objectPosition="center"
-        quality="100"
-        alt="image"
-      />
+      <Img src="/img/main_bg.png" alt="image" />
       <ImageContainer
         initial={{ rotate: -30 }}
         animate={{
@@ -30,12 +18,12 @@ const Hero = () => {
           transition: { duration: 180, ease: "linear", repeat: Infinity },
         }}
       >
-        <Image src={LogoImage} alt="logo" />
+        <img src="/img/logo-icon.svg" alt="logo" />
       </ImageContainer>
 
       <Wrap>
         <Logo variants={logoAni} animate="animate" initial="initial">
-          <Image src={LogoPng} alt="speak on logo image" />
+          <img src="/img/logo.svg" width="100%" alt="speak on logo image" />
         </Logo>
         <Icons />
         <ButtonHolder variants={buttonAni} animate="animate" initial="initial">
@@ -53,9 +41,13 @@ const Section = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  img {
-    pointer-events: none;
-  }
+`;
+
+const Img = styled.img`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `;
 const Wrap = styled.div`
   display: flex;

@@ -1,9 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Image from "next/image";
 
-import BuildingImage from "../../img/home/buildings.jpg";
-import BlurImage from "../../img/home/blur.png";
 import Container from "../ui/container/container.component";
 
 const ImageSeperator = ({ image, children }) => {
@@ -14,18 +11,17 @@ const ImageSeperator = ({ image, children }) => {
       </Container>
       <Sep>
         {image && (
-          <Image
-            layout="fill"
-            quality="100"
-            objectFit="cover"
-            src={BuildingImage}
+          <img
+            src="/img/home/buildings.jpg"
             alt="building image"
+            width="100%"
+            height="100%"
           />
         )}
       </Sep>
       <Sep2>
         <Shadow>
-          <Image src={BlurImage} layout="fill" alt="shadow" />
+          <img src="/img/home/blur.png" width="100%" alt="shadow" />
         </Shadow>
       </Sep2>
     </Wrap>
@@ -51,6 +47,7 @@ const Content = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 `;
 
 const Sep = styled.div`
@@ -62,6 +59,10 @@ const Sep = styled.div`
   background: ${(props) => props.theme.colors.ui.primaryGradient};
   border-top-left-radius: 2000px 300px;
   border-top-right-radius: 2000px 300px;
+  img {
+    object-fit: cover;
+    width: 100%;
+  }
 `;
 const Sep2 = styled.div`
   width: 120%;

@@ -1,8 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Image from "next/image";
-
-import SupportImage from "../../img/home/suporte_image.png";
 
 import Container from "../ui/container/container.component";
 import Text from "../ui/typo/text.type";
@@ -28,7 +25,11 @@ const Suport = () => {
           <Button>contactanos</Button>
         </Column>
         <Column>
-          <Image src={SupportImage} alt="support image" />
+          <img
+            src="/img/home/suporte_image.png"
+            width="100%"
+            alt="support image"
+          />
         </Column>
       </Content>
     </Container>
@@ -42,7 +43,7 @@ const Content = styled.div`
   margin-bottom: 50px;
 `;
 const Column = styled.div`
-  min-width: 200px;
+  min-width: 300px;
   flex: 1;
 `;
 const Space = styled.div`

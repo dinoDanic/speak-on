@@ -1,15 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import Image from "next/image";
-
-import BlurImage from "../../img/home/blur.png";
 
 const Seperator = () => {
   return (
     <Container>
       <Sep>
         <Shadow>
-          <Image src={BlurImage} layout="fill" alt="shadow" />
+          <img src="/img/home/blur.png" alt="shadow" />
         </Shadow>
       </Sep>
     </Container>

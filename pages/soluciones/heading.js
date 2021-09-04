@@ -1,12 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import Image from "next/image";
 
 import { motion } from "framer-motion";
 import { solutionsAni, solutionsAniImage } from "../../styles/animations";
-
-import BuildingImage from "../../img/home/buildings.jpg";
-import BlurImage from "../../img/home/blur.png";
 
 import Container from "../../components/ui/container/container.component";
 
@@ -23,17 +19,16 @@ const Heading = () => {
         animate="animate"
         initial="initial"
       >
-        <Image
-          layout="fill"
+        <img
           quality="100"
           objectFit="cover"
-          src={BuildingImage}
+          src="../../img/home/buildings.jpg"
           alt="building image"
         />
       </ImageHold>
       <Sep>
         <Shadow>
-          <Image src={BlurImage} layout="fill" alt="shadow" />
+          <img src="../../img/home/blur.png" alt="shadow" />
         </Shadow>
       </Sep>
     </Wrap>

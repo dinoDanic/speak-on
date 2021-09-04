@@ -1,13 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 import Title from "../ui/typo/title.typo";
 import Text from "../ui/typo/text.type";
 import Button from "../ui/button/button.component";
-
-import BackArrowSvg from "../../img/cat/backarrow.svg";
 
 const BigCat = ({ data, setIsBig, normal }) => {
   const { image, title, message, icon } = data;
@@ -22,7 +19,7 @@ const BigCat = ({ data, setIsBig, normal }) => {
         <Column>
           <Header>
             <Title>{title}</Title>
-            <Image src={icon} alt="icon image" />
+            <img src={icon} alt="icon image" width="40px" />
           </Header>
           <Text>{message}</Text>
           <ButtonFix>contactanos</ButtonFix>
@@ -30,10 +27,10 @@ const BigCat = ({ data, setIsBig, normal }) => {
         <Column>
           {!normal && (
             <BackArrow onClick={() => setIsBig(false)}>
-              <Image src={BackArrowSvg} alt="back image" />
+              <img src="/img/cat/backarrow.svg" alt="back image" />
             </BackArrow>
           )}
-          <Image src={image} quality="100" alt="support image" />
+          <img src={image} quality="100" alt="support image" />
         </Column>
       </Content>
     </Wrap>
@@ -68,6 +65,8 @@ const ButtonFix = styled(Button)`
 const Header = styled.div`
   display: flex;
   align-items: center;
+  margin-bottom: 20px;
+  justify-content: space-between;
   div {
     &:first-child {
       margin-right: 15px;

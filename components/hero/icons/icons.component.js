@@ -1,13 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import Image from "next/image";
 import { motion } from "framer-motion";
 
 import { icon1, icon2, icon3 } from "../../../styles/animations";
-
-import telemarketingSvg from "../../../img/icons/mic.svg";
-import ContactCenterSvg from "../../../img/icons/contactcenter.svg";
-import AttenctionSvg from "../../../img/icons/attencion.svg";
 
 const Icons = () => {
   return (
@@ -18,7 +13,7 @@ const Icons = () => {
         initial="initial"
         whileHover={{ scale: 1.05 }}
       >
-        <Image src={telemarketingSvg} alt="icon" />
+        <img src="/img/icons/mic.svg" width="100" height="100" alt="icon" />
         <Text>telemarketing</Text>
       </Icon>
       <Icon
@@ -27,7 +22,7 @@ const Icons = () => {
         initial="initial"
         whileHover={{ scale: 1.05 }}
       >
-        <Image src={ContactCenterSvg} alt="icon" />
+        <img src="/img/icons/contactcenter.svg" alt="icon" />
         <Text>contact center</Text>
       </Icon>
       <Icon
@@ -36,7 +31,7 @@ const Icons = () => {
         initial="initial"
         whileHover={{ scale: 1.05 }}
       >
-        <Image src={AttenctionSvg} alt="icon" />
+        <img src="/img/icons/attencion.svg" alt="icon" />
         <Text>atencion a clientes</Text>
       </Icon>
     </Container>
@@ -59,6 +54,7 @@ const Icon = styled(motion.div)`
   width: 180px;
   display: flex;
   justify-content: center;
+  align-items: center;
   cursor: pointer;
   flex-direction: column;
   flex: 1;
