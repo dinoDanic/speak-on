@@ -12,28 +12,44 @@ const Contact = () => {
     <Container>
       <Wrap>
         <Column>
-          <Row>
-            <Info>nombre:</Info>
-            <Input placeholder="Ejem. Arturo Sánchez Aguilar" />
-          </Row>
-          <Row>
-            <Info>correo:</Info>
-            <Input type="email" placeholder="arturosanchez@gmail.com" />
-          </Row>
-          <Row>
-            <Info>servicio:</Info>
-            <Input placeholder="Telemarketing" />
-          </Row>
-          <Row>
-            <Info>mensaje:</Info>
-            <TextArea />
-          </Row>
-          <Row>
-            <Info />
-            <Button variant="border">enviar</Button>
-          </Row>
+          <Form
+            action="https://formsubmit.co/dino.danic@gmail.com"
+            method="POST"
+          >
+            <Row>
+              <Info>nombre:</Info>
+              <Input
+                type="text"
+                name="name"
+                required
+                placeholder="Ejem. Arturo Sánchez Aguilar"
+              />
+            </Row>
+            <Row>
+              <Info>correo:</Info>
+              <Input
+                type="email"
+                name="email"
+                required
+                placeholder="arturosanchez@gmail.com"
+              />
+            </Row>
+            <Row>
+              <Info>servicio:</Info>
+              <Input type="text" name="category" placeholder="Telemarketing" />
+            </Row>
+            <Row>
+              <Info>mensaje:</Info>
+              <TextArea type="text" name="name" />
+            </Row>
+            <Row>
+              <Info />
+              <Button variant="border" type="submit">
+                enviar
+              </Button>
+            </Row>
+          </Form>
         </Column>
-
         <Column>
           <Title>UN PROFESIONAL SE PONDRÁ EN CONTACTO CONTIGO</Title>
           <Message>
@@ -61,6 +77,8 @@ const Wrap = styled.div`
   margin-top: -20px;
   margin-bottom: 50px;
 `;
+
+const Form = styled.form``;
 
 const Title = styled.div`
   color: ${(props) => props.theme.colors.font.primary};
