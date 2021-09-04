@@ -57,7 +57,7 @@ const CatButton = ({ data, setIsActive }) => {
         onClick={() => handleClick()}
       >
         <Icon variants={iconMotion}>
-          <img src={icon} alt="telemarketing icon" />
+          <Img src={icon} alt="telemarketing icon" />
         </Icon>
         <Text variants={textMotion}>{title}</Text>
       </Outer>
@@ -67,6 +67,8 @@ const CatButton = ({ data, setIsActive }) => {
     </Wrap>
   );
 };
+
+const Img = styled.img``;
 
 const Fake = styled.div`
   position: absolute;
@@ -97,6 +99,11 @@ const Outer = styled(motion.div)`
   align-items: center;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   cursor: pointer;
+  &:hover {
+    img {
+      filter: brightness(0) invert(1);
+    }
+  }
   @media (max-width: ${(props) => props.theme.screen.mobile}) {
     width: 150px;
     height: 150px;
@@ -118,9 +125,6 @@ const Text = styled(motion.div)`
   }
 `;
 const Icon = styled(motion.div)`
-  svg {
-    color: white !important;
-  }
   @media (max-width: ${(props) => props.theme.screen.mobile}) {
     img {
       width: 36px;
