@@ -47,16 +47,12 @@ const OpenCategory = ({ setCurrentCat, currentCat }) => {
 };
 
 const Wrap = styled(motion.div)`
-  padding: 0 5%;
-  top: 0;
   background: white;
-  z-index: 200;
 `;
 const BackArrow = styled.div`
-  position: absolute;
-  right: 10px;
-  top: -36px;
   transition: 0.2s ease;
+  display: flex;
+  justify-content: flex-end;
   cursor: pointer;
   &:hover {
     transform: scale(1.1);
@@ -83,7 +79,6 @@ const Content = styled.div`
 `;
 const Column = styled.div`
   min-width: 200px;
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

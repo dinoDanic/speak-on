@@ -23,9 +23,11 @@ const Soluciones = () => {
         <HeroOtherPages>How we can help</HeroOtherPages>
         <BackgroundHolder />
         <Container>
-          {catsData?.map((data) => (
-            <BigCat normal data={data} key={data.id} />
-          ))}
+          <BigCats>
+            {catsData?.map((data) => (
+              <BigCat normal data={data} key={data.id} />
+            ))}
+          </BigCats>
         </Container>
       </SolucionesWrap>
     </>
@@ -42,25 +44,11 @@ const SolucionesWrap = styled(motion.div)`
   position: relative;
   overflow: hidden;
 `;
-const LeftLogo = styled.div`
-  width: 775px;
-  position: absolute;
-  height: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  margin-top: 500px;
-  left: -700px;
-`;
-const RightLogo = styled.div`
-  width: 775px;
-  margin-top: -300px;
-  position: absolute;
-  height: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  right: -500px;
+
+const BigCats = styled.div`
+  @media (max-width: ${(props) => props.theme.screen.mobile}) {
+    margin-top: -100px;
+  }
 `;
 
 export default Soluciones;

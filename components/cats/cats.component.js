@@ -91,7 +91,7 @@ const Wrap = styled(motion.div)`
   position: relative;
   @media (max-width: ${(props) => props.theme.screen.mobile}) {
     grid-template-columns: repeat(2, auto);
-    margin-top: -130px;
+    /*   margin-top: -130px; */
     gap: 20px;
   }
 `;
