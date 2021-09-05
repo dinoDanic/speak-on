@@ -1,10 +1,15 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const SocialMedia = () => {
   return (
-    <Container>
+    <Container
+      initial={{ x: 100 }}
+      animate={{ x: 0 }}
+      transition={{ delay: 0.3, duration: 0.5 }}
+    >
       <Wrap>
         <Link passHref href="">
           <Facebook>
@@ -34,7 +39,7 @@ const items = css`
   }
 `;
 
-const Container = styled.div`
+const Container = styled(motion.div)`
   position: fixed;
   right: 60px;
   top: 170px;

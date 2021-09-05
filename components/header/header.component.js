@@ -1,11 +1,16 @@
 import React from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 import Menu from "./menu/menu.component";
 
 const Header = () => {
   return (
-    <Bar>
+    <Bar
+      initial={{ y: -150 }}
+      animate={{ y: 0 }}
+      transition={{ delay: 0.3, duration: 0.5 }}
+    >
       <Container>
         <Content>
           <Logo>
@@ -18,7 +23,7 @@ const Header = () => {
   );
 };
 
-const Bar = styled.div`
+const Bar = styled(motion.div)`
   width: 100%;
   height: 140px;
   position: fixed;

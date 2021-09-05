@@ -26,22 +26,20 @@ function MyApp({ Component, pageProps, router }) {
     <ScrollContext.Provider value={{ scrollDown, setScrollDown }}>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        {/* <AnimatePresence>{isLoading && <Loading />}</AnimatePresence> */}
-        <AnimatePresence exitBeforeEnter>
-          {isLoading ? (
-            <Loading />
-          ) : (
-            <Content>
-              <Header />
-              <HideDesktop>
-                <SocialMedia />
-              </HideDesktop>
-              <MenuMobile />
+        <AnimatePresence>{isLoading && <Loading />}</AnimatePresence>
+        {!isLoading && (
+          <Content>
+            <Header />
+            <HideDesktop>
+              <SocialMedia />
+            </HideDesktop>
+            <MenuMobile />
+            <AnimatePresence exitBeforeEnter>
               <Component key={router.route} {...pageProps} />
-              <Footer />
-            </Content>
-          )}
-        </AnimatePresence>
+            </AnimatePresence>
+            <Footer />
+          </Content>
+        )}
       </ThemeProvider>
     </ScrollContext.Provider>
   );
